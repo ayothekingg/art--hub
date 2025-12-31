@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import ArrowButton from "../components/ArrowButton";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import { useSwipeable } from "react-swipeable";
 import { auctionCards } from "../data";
 import AuctionCard from "../components/AuctionCard";
@@ -30,7 +31,6 @@ const Auctions = () => {
         boxSizing: "border-box",
       }}
     >
-     
       <div className="hidden md:block">
         <h2 className="text-white satoshi-bold text-[22px] md:text-[40px] mb-4 ml-4 md:ml-[90px]">
           See Upcoming Auctions and Exhibitions
@@ -67,30 +67,8 @@ const Auctions = () => {
           />
         </div>
         <div className="flex gap-4">
-          <button
-            className="w-[70px] h-[70px] flex items-center justify-center rounded-full bg-white/20 text-white text-2xl cursor-pointer"
-            aria-label="Previous"
-            style={{
-              backdropFilter: "blur(15.54px)",
-              WebkitBackdropFilter: "blur(15.54px)",
-              boxShadow: "7.77px 7.77px 11.66px 0px #00000026",
-            }}
-            onClick={handlePrev}
-          >
-            <MdKeyboardArrowLeft size={32} />
-          </button>
-          <button
-            className="w-[70px] h-[70px] flex items-center justify-center rounded-full bg-white/20 text-white text-2xl cursor-pointer"
-            aria-label="Next"
-            style={{
-              backdropFilter: "blur(15.54px)",
-              WebkitBackdropFilter: "blur(15.54px)",
-              boxShadow: "7.77px 7.77px 11.66px 0px #00000026",
-            }}
-            onClick={handleNext}
-          >
-            <MdKeyboardArrowRight size={32} />
-          </button>
+          <ArrowButton direction="left" onClick={handlePrev} />
+          <ArrowButton direction="right" onClick={handleNext} />
         </div>
       </div>
     </section>
