@@ -11,15 +11,12 @@ import { livebidMessages } from "../data";
 
 const LiveBid: React.FC = () => {
   const location = useLocation();
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const auctionImg = location.state?.image;
-  
-  
+
   return (
     <>
-     
       <div className="min-h-screen app-bg hidden md:flex flex-col">
-       
         <div className="hidden md:flex items-center text-[24px] satoshi-medium ml-[120px] pt-[50px] mb-15">
           <Link to="/" className="text-[#999] hover:underline">
             Home
@@ -31,12 +28,11 @@ const navigate = useNavigate();
           <span className=" text-[#999]">/</span>
           <span className="app-text">Live Bid</span>
         </div>
-        
+
         <div className="flex flex-1 items-center justify-center">
           <div className="w-[1240px] h-[808px] bg-transparent border mb-10 flex">
-           
+            
             <div className="md:w-[620px] md:h-[806px] shrink-0 relative">
-             
               <button
                 className="absolute top-6 left-8 z-10 w-[50px] h-[50px] bg-white/20 dark:bg-[#232323] rounded-full flex items-center justify-center shadow"
                 aria-label="Close"
@@ -59,7 +55,6 @@ const navigate = useNavigate();
                 alt="Auction"
                 className="w-full h-full object-cover"
               />
-            
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <span className=" text-white text-[48px] satoshi-bold ">
                   Current bid $4500
@@ -67,9 +62,8 @@ const navigate = useNavigate();
               </div>
             </div>
             
-            <div className="absolute right-40 -bottom-38 hidden md:flex flex-col items-start gap-5">
-             
-              <div className="w-[404px] h-[623px] bg-transparent -ml-3 rounded-[25px] p-4 overflow-y-auto mb-2 flex flex-col gap-4 no-scrollbar">
+            <div className="flex flex-col items-start gap-5 ml-10 w-[404px]">
+              <div className="h-[623px] bg-transparent -ml-3 rounded-[25px] p-4 overflow-y-auto mb-2 flex flex-col gap-4 no-scrollbar">
                 {livebidMessages.map((msg) => (
                   <ChatMessage
                     key={msg.id}
@@ -79,13 +73,10 @@ const navigate = useNavigate();
                   />
                 ))}
               </div>
-            
               <div className="text-[20px] md:text-[20px] text-[#616161] italic satoshi-medium">
                 Creator : Stormy Rylie
               </div>
-
               <div className="flex items-center gap-15 relative">
-
                 <div className="hidden md:flex items-center gap-15 relative">
                   <BidInputBox placeholder="Place Bid" />
                 </div>
@@ -111,6 +102,7 @@ const navigate = useNavigate();
         </div>
       </div>
 
+      
       <div
         className="flex md:hidden flex-col items-center justify-center h-screen w-full relative"
         style={{
