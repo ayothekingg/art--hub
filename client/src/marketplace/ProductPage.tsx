@@ -54,7 +54,7 @@ const ProductPage = () => {
 
 
       <section className="min-h-screen flex flex-col app-bg">
-        <div className="block text-[18px] ml-[10px] mt-8 mb-5 satoshi-medium md:mt-15 md:text-[24px] md:mb-15 md:ml-[120px]">
+        <div className="block text-[18px] ml-2.5 mt-8 mb-5 satoshi-medium md:mt-15 md:text-[24px] md:mb-15 md:ml-[120px]">
           <Link to="/" className="text-[#999] hover:underline">
             Home
           </Link>
@@ -72,7 +72,7 @@ const ProductPage = () => {
             <img
               src={product.image}
               alt={product.title}
-              className="w-[357px] h-[384px] object-cover"
+              className="w-[357px] h-96 object-cover"
             />
           </div>
           <div className="flex justify-between items-center w-[357px] mx-auto mb-6">
@@ -161,7 +161,7 @@ const ProductPage = () => {
             {/* Left button */}
             <button
               onClick={handlePrevCard}
-              className="absolute left-10 -mt-5 top-1/2 -translate-y-1/2 w-[64px] h-[64px] flex items-center justify-center rounded-full bg-transparent border-[white] border z-10"
+              className="absolute left-10 -mt-5 top-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center rounded-full bg-transparent border-[white] border z-10"
               aria-label="Previous card"
             >
               <HiChevronLeft size={32} className="text-[white]" />
@@ -181,7 +181,7 @@ const ProductPage = () => {
           
             <button
               onClick={handleNextCard}
-              className="absolute right-10 -mt-5 top-1/2 -translate-y-1/2 w-[64px] h-[64px] flex items-center justify-center rounded-full bg-transparent border-[white] border z-10"
+              className="absolute right-10 -mt-5 top-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center rounded-full bg-transparent border-[white] border z-10"
               aria-label="Next card"
             >
               <HiChevronRight size={32} className="text-[white]" />
@@ -190,7 +190,7 @@ const ProductPage = () => {
         </div>
 
       
-        <div className="ml-[120px] mb-8 w-[1220px] h-[1020px] bg-transparent border-2 mb-15 sort-border hidden md:flex items-stretch justify-center">
+        <div className="ml-[120px] w-[1220px] h-[1020px] bg-transparent border-2 mb-15 sort-border hidden md:flex items-stretch justify-center">
          
           <div className="flex-1 flex flex-col items-center justify-center h-[1020px]">
             <img
@@ -252,14 +252,14 @@ const ProductPage = () => {
             
                 <div className="flex flex-row items-center gap-6 ">
                   <button
-                    className="w-[315px] h-[80px] bg-[#272727] text-white text-[26px] satoshi-bold"
+                    className="w-[315px] h-20 bg-[#272727] text-white text-[26px] satoshi-bold"
                     onClick={() => {
             
                     }}
                   >
                     Add to Cart
                   </button>
-                  <div className="w-[100px] h-[80px] flex items-center justify-center border sort-border  cursor-pointer ">
+                  <div className="w-[100px] h-20 flex items-center justify-center border sort-border  cursor-pointer ">
                     <PiHeartStraightThin
                       className="tborder sort-border"
                       size={60}
@@ -301,13 +301,13 @@ const ProductPage = () => {
           <div className="flex gap-6">
             <button
               onClick={() => scroll("left")}
-              className="w-[44px] h-[44px] md:w-[58px] md:h-[58px] flex items-center justify-center rounded-full app-bg border-main border-[0.41px] "
+              className="w-11 h-11 md:w-[58px] md:h-[58px] flex items-center justify-center rounded-full app-bg border-main border-[0.41px] "
             >
               <HiChevronLeft size={32} />
             </button>
             <button
               onClick={() => scroll("right")}
-              className="w-[44px] h-[44px] md:w-[58px] md:h-[58px] flex items-center justify-center rounded-full app-bg border-main border-[0.41px] "
+              className="w-11 h-11 md:w-[58px] md:h-[58px] flex items-center justify-center rounded-full app-bg border-main border-[0.41px] "
             >
               <HiChevronRight size={32} />
             </button>
