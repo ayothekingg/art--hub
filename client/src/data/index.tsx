@@ -429,3 +429,56 @@ export const livebidMessages = [
     message: "$45.00 instant bid",
   },
 ];
+
+import dropImg1 from "../assets/dropcards/1.jpg";
+import dropImg2 from "../assets/dropcards/2.jpg";
+import dropImg3 from "../assets/dropcards/3.jpg";
+import dropImg4 from "../assets/dropcards/4.jpg";
+
+
+export const dropCards = [
+  {
+    id: 1,
+    image: dropImg1,
+    status: "UPCOMING",
+    date: "November 21 at 11 am WAT",
+    title: "Eyo : Eko For Show",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Amet odio a aenean quis vitae tempus. Sed nunc tempus aliquet lectus ut vulputate.",
+    creator: "Aliya Minat",
+    action: "Get Notified",
+  },
+  {
+    id: 2,
+    image: dropImg2,
+    status: "LIVE NOW",
+    date: "November 22 at 2 pm WAT",
+    title: "Ginger Suburbs",
+    description:
+      "Experience the vibrant art scene of Lagos with exclusive pieces and live showcases.",
+    creator: "Tunde Bakare",
+    action: "Join Now",
+  },
+  {
+    id: 3,
+    image: dropImg3,
+    status: "ENDED",
+    date: "December 1 at 4 pm WAT",
+    title: "Colors of Africa",
+    description:
+      "A celebration of African culture through colors, patterns, and stories.",
+    creator: "Chinelo Okafor",
+    action: "View",
+  },
+  {
+    id: 4,
+    image: dropImg4,
+    status: "ENDED",
+    date: "October 15 at 10 am WAT",
+    title: "Warped ‘99",
+    description:
+      "A dreamy collection of pastel artworks by emerging talents.",
+    creator: "Samuel Adeyemi",
+    action: "View",
+  },
+];
