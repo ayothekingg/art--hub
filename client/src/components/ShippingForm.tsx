@@ -26,7 +26,7 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
             <input
               type={field.type}
               name={field.name}
-              className="text-[#888888] rounded-lg w-full h-[50px] md:w-[610px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input"
+              className="text-[#888888] rounded-lg w-full h-[50px] md:w-[610px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
               placeholder={field.placeholder}
             />
           </div>
@@ -72,7 +72,7 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
             <input
               type={field.type}
               name={field.name}
-              className="text-[#888888] rounded-lg w-full h-[50px] md:w-[610px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input"
+              className="text-[#888888] rounded-lg w-full h-[50px] md:w-[610px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
               placeholder={field.placeholder}
             />
           </div>
@@ -88,7 +88,7 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
             <input
               type={field.type}
               name={field.name}
-              className="text-[#888888] rounded-lg w-full h-[50px] md:w-[610px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input"
+              className="text-[#888888] rounded-lg w-full h-[50px] md:w-[610px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
               placeholder={field.placeholder}
             />
           </div>
@@ -101,7 +101,7 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
           </label>
           <input
             type="text"
-            className="text-[#888888] rounded-lg w-full h-[50px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input"
+            className="text-[#888888] rounded-lg w-full h-[50px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
             placeholder="Country"
           />
         </div>
@@ -111,7 +111,7 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
           </label>
           <input
             type="text"
-            className="text-[#888888] rounded-lg w-full h-[50px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input"
+            className="text-[#888888] rounded-lg w-full h-[50px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
             placeholder="Postal Code"
           />
         </div>
@@ -125,7 +125,7 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
           <Listbox value={selectedWallet} onChange={setSelectedWallet}>
             {({ open }) => (
               <>
-                <Listbox.Button className="text-[#888888] rounded-lg w-full h-[50px] md:w-full md:h-[76px] pl-6 search-input flex items-center justify-between pr-12">
+                <Listbox.Button className="text-[#888888] rounded-lg w-full h-[50px] md:w-full md:h-[76px] pl-6 search-input flex items-center justify-between pr-12 focus:outline-none">
                   <span className="flex items-center gap-4 text-[#aaaaaa] md:text-[26px] text-[18px[">
                     {selectedWallet ? selectedWallet.icon : "SELECT WALLET"}
                   </span>
@@ -133,7 +133,7 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
                     {open ? <FiChevronUp /> : <FiChevronDown />}
                   </span>
                 </Listbox.Button>
-                <Listbox.Options className="absolute z-10 mt-2 md:w-[610px] w-full search-input rounded-lg shadow-lg">
+                <Listbox.Options className="absolute z-10 mt-2 md:w-[610px] w-full search-input rounded-lg shadow-lg focus:outline-none">
                   {wallets.map((wallet) => (
                     <Listbox.Option
                       key={wallet.name}

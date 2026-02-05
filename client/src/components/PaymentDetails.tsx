@@ -86,8 +86,8 @@ function PaymentForm({
 
 const PaymentDetails: React.FC = () => {
   const [selectedMethod, setSelectedMethod] = useState<"wallet" | "card">("wallet");
-  const [selectedNetwork, setSelectedNetwork] = useState(networks[0]);
-  const [selectedToken, setSelectedToken] = useState(tokens[0]);
+ const [selectedNetwork, setSelectedNetwork] = useState(null);
+const [selectedToken, setSelectedToken] = useState(null);
   const [checked, setChecked] = useState(false);
 
   const navigate = useNavigate();
