@@ -5,7 +5,10 @@ interface CardFormFieldsProps {
   setChecked: (v: boolean) => void;
 }
 
-const CardFormFields: React.FC<CardFormFieldsProps> = ({ checked, setChecked }) => (
+const CardFormFields: React.FC<CardFormFieldsProps> = ({
+  checked,
+  setChecked,
+}) => (
   <div className="flex flex-col gap-6 md:mt-6">
     <div className="flex flex-col">
       <label className="md:text-[26px] text-[20px] text-[#888888] satoshi-medium mb-2 md:mb-4">
@@ -13,19 +16,41 @@ const CardFormFields: React.FC<CardFormFieldsProps> = ({ checked, setChecked }) 
       </label>
       <input
         type="text"
-        className="rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8"
+        inputMode="numeric"
+        pattern="[0-9 ]*"
+        maxLength={19}
+        className="rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
         placeholder="1234 5678 9012 3456"
+        onInput={e => {
+          let value = (e.target as HTMLInputElement).value;
+          value = value.replace(/\D/g, "");
+          value = value.slice(0, 16);
+          value = value.replace(/(.{4})/g, "$1 ").trim();
+          (e.target as HTMLInputElement).value = value;
+        }}
       />
     </div>
-    <div className="flex gap-3 md:gap-6">
+    <div className="flex gap-3 md:gap-6 md:mt-10">
       <div className="flex flex-col flex-1">
         <label className="md:text-[26px] text-[20px] text-[#888888] satoshi-medium mb-2 md:mb-4">
           Expiry Date
         </label>
         <input
           type="text"
-          className="rounded-lg md:w-[285px] w-[190px] h-[50px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8"
-          placeholder="MM/YY"
+          inputMode="numeric"
+          pattern="[0-9 /]*"
+          maxLength={7}
+          className="rounded-lg md:w-[285px] w-[190px] h-[50px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
+          placeholder="MM / YY"
+          onInput={e => {
+            let value = (e.target as HTMLInputElement).value;
+            value = value.replace(/[^0-9]/g, "");
+            if (value.length > 2) {
+              value = value.slice(0, 2) + " / " + value.slice(2, 4);
+            }
+            value = value.slice(0, 7);
+            (e.target as HTMLInputElement).value = value;
+          }}
         />
       </div>
       <div className="flex flex-col flex-1">
@@ -34,18 +59,25 @@ const CardFormFields: React.FC<CardFormFieldsProps> = ({ checked, setChecked }) 
         </label>
         <input
           type="text"
-          className="rounded-lg md:w-[277px] w-[190px] h-[50px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8"
-          placeholder="CVC"
+          inputMode="numeric"
+          pattern="[0-9]*"
+          maxLength={3}
+          className="rounded-lg md:w-[277px] w-[190px] h-[50px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
+          placeholder="123"
+          onInput={(e) => {
+            const input = e.target as HTMLInputElement;
+            input.value = input.value.replace(/[^0-9]/g, "").slice(0, 3);
+          }}
         />
       </div>
     </div>
-    <div className="flex flex-col">
+    <div className="flex flex-col md:mt-10">
       <label className="md:text-[26px] text-[20px] text-[#888888] satoshi-medium mb-2 md:mb-4">
         Cardholder Name
       </label>
       <input
         type="text"
-        className="rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8"
+        className="rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
         placeholder="Full Name"
       />
     </div>
