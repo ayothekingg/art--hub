@@ -5,7 +5,6 @@ interface MainAuctionCardProps {
 }
 
 const MainAuctionCard: React.FC<MainAuctionCardProps> = ({ image }) => {
-  console.log("MainAuctionCard image prop:", image); 
   return (
     <div className="relative bg-white rounded-xl shadow-lg overflow-hidden w-[228px] h-[186px] md:w-[484px] md:h-[396px]">
       <img src={image} alt="Auction" className="w-full h-full object-cover" />

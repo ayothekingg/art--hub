@@ -73,7 +73,6 @@ const MainAuctions: React.FC = () => {
           className="flex flex-row gap-5 md:gap-8 mt-10 md:mt-20 overflow-x-auto whitespace-nowrap no-scrollbar pb-4 pr-4 md:pr-16 scroll-smooth"
         >
           {auctionImages.map((img, idx) => {
-            console.log("auction card img:", img);
             return (
               <div key={idx} className="shrink-0">
                 <Link to="/livebid" state={img}>
