@@ -80,20 +80,20 @@ const DropCard: React.FC<DropCardProps> = ({
         >
           {status}
         </div>
-        <span className="text-app satoshi-medium text-[16px] md:text-[20px]">
+        <span className="satoshi-medium text-[16px] md:text-[20px]">
           {date}
         </span>
-        <span className="text-app satoshi-medium text-[25px] md:text-[36px]">
+        <span className="satoshi-medium text-[25px] md:text-[36px]">
           {title}
         </span>
-        <span className="text-app satoshi text-[16px] md:text-[20px] wrap-break-words max-w-xs md:max-w-md">
+        <span className=" satoshi text-[16px] md:text-[20px] wrap-break-words max-w-xs md:max-w-md">
           {description}
         </span>
-        <span className="text-app satoshi-medium text-[20px] md:text-[24px]">
+        <span className="satoshi-medium text-[20px] md:text-[24px]">
           Creator : <span className="text-[#006CA2]">{creator}</span>
         </span>
         {action && (
-          <span className="text-app text-[#006CA2] underline satoshi-medium text-[16px] md:text-[20px] cursor-pointer">
+          <span className=" text-[#006CA2] underline satoshi-medium text-[16px] md:text-[20px] cursor-pointer">
             {action}
           </span>
         )}
