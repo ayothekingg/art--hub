@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
       </h1>
 
       <p className="text-[16px] md:text-[28px] mb-20 satoshi-bold text-center ml-8 mr-8 md:ml-[257px] md:mr-[257px] app-text">
-        Flip through more than 10,000 vintage shots, old photograghs, historic
+        Flip through more than 10,000 vintage shots, old photographs, historic
         images and captures seamlessly in one place. Register to get top access.
       </p>
 
