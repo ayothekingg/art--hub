@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { marketplaceProducts } from "../data";
 import Navbar from "../components/Navbar";
@@ -10,6 +9,7 @@ import { PiHeartStraightThin } from "react-icons/pi";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 import CollectionProductCard from "../components/CollectionProductCard";
 import CollapsibleSection from "../components/CollapsibleSection";
+import { useCartStore } from "../store/cartStore";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -18,6 +18,8 @@ const ProductPage = () => {
   const [theme, setTheme] = useDarkMode();
   const [quantity, setQuantity] = useState(1);
   const [mobileCardIndex, setMobileCardIndex] = useState(0);
+
+  const { addToCart } = useCartStore();
 
   const handlePrevCard = () => {
     setMobileCardIndex((prev) =>
@@ -51,7 +53,6 @@ const ProductPage = () => {
         theme={theme}
         setTheme={setTheme}
       />
-
 
       <section className="min-h-screen flex flex-col app-bg">
         <div className="block text-[18px] ml-2.5 mt-8 mb-5 satoshi-medium md:mt-15 md:text-[24px] md:mb-15 md:ml-[120px]">
@@ -123,7 +124,15 @@ const ProductPage = () => {
             <button
               className="w-[214px] h-[54px] bg-[#272727] text-white text-[20px] satoshi-bold "
               onClick={() => {
-              
+                addToCart({
+                  id: product.id,
+                  image: product.image,
+                  title: product.title,
+                  subtitle: product.creator,
+                  // size: product.size,
+                  price: product.price,
+                  quantity: quantity,
+                });
               }}
             >
               Add to Cart
@@ -135,19 +144,19 @@ const ProductPage = () => {
 
           <div className="block w-[398px] h-px bg-[#333333] dark:bg-[#666666] ml-2 mb-6" />
 
-              <CollapsibleSection title="Description">
+          <CollapsibleSection title="Description">
             {product.description}
           </CollapsibleSection>
 
           <div className="block w-[398px] h-px bg-[#333333] dark:bg-[#666666] ml-2 mb-6" />
 
-       <CollapsibleSection title="Listing">
+          <CollapsibleSection title="Listing">
             {product.listing}
           </CollapsibleSection>
 
           <div className="block w-[398px] h-px bg-[#333333] dark:bg-[#666666] ml-2 mb-6" />
 
-        <CollapsibleSection title="Listing">
+          <CollapsibleSection title="Listing">
             {product.listing}
           </CollapsibleSection>
 
@@ -158,7 +167,6 @@ const ProductPage = () => {
           </span>
 
           <div className="relative flex justify-center items-center mt-10 mb-25">
-            {/* Left button */}
             <button
               onClick={handlePrevCard}
               className="absolute left-10 -mt-5 top-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center rounded-full bg-transparent border-[white] border z-10"
@@ -166,7 +174,6 @@ const ProductPage = () => {
             >
               <HiChevronLeft size={32} className="text-[white]" />
             </button>
-            {/* Card */}
             <Link
               to={`/Marketplace/product/${marketplaceProducts[mobileCardIndex].id}`}
             >
@@ -178,7 +185,7 @@ const ProductPage = () => {
                 />
               </div>
             </Link>
-          
+
             <button
               onClick={handleNextCard}
               className="absolute right-10 -mt-5 top-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center rounded-full bg-transparent border-[white] border z-10"
@@ -189,9 +196,7 @@ const ProductPage = () => {
           </div>
         </div>
 
-      
         <div className="ml-[120px] w-[1220px] h-[1020px] bg-transparent border-2 mb-15 sort-border hidden md:flex items-stretch justify-center">
-         
           <div className="flex-1 flex flex-col items-center justify-center h-[1020px]">
             <img
               src={product.image}
@@ -199,11 +204,10 @@ const ProductPage = () => {
               className="w-[525px] h-[926px] object-cover -ml-17"
             />
           </div>
-        
+
           <div className="w-px border sort-border  -ml-17 h-[1018px]" />
-         
+
           <div className="flex-1 flex flex-col justify-between h-[1020px] py-12">
-           
             <div className="flex justify-between items-center -mt-5 mb-10 h-[120px] px-10">
               <h1 className="text-[46px] satoshi-bold app-text">
                 {product.title}
@@ -214,10 +218,8 @@ const ProductPage = () => {
               </div>
             </div>
 
-     
             <div className="w-full h-px -mt-20 border sort-border " />
 
-   
             <div className="flex flex-col items-start px-10">
               <p className="text-[30px] satoshi-normal app-text">
                 <span className="">Creator : </span>
@@ -249,12 +251,20 @@ const ProductPage = () => {
                     <FiPlus size={30} />
                   </span>
                 </div>
-            
+
                 <div className="flex flex-row items-center gap-6 ">
                   <button
                     className="w-[315px] h-20 bg-[#272727] text-white text-[26px] satoshi-bold"
                     onClick={() => {
-            
+                      addToCart({
+                        id: product.id,
+                        image: product.image,
+                        title: product.title,
+                        subtitle: product.creator,
+                        // size: product.size,
+                        price: product.price,
+                        quantity: quantity,
+                      });
                     }}
                   >
                     Add to Cart
@@ -269,31 +279,26 @@ const ProductPage = () => {
               </div>
             </div>
 
-     
             <div className="w-full h-px  border sort-border " />
-      
-             <CollapsibleSection title="Description">
-            {product.description}
-          </CollapsibleSection>
 
-       
+            <CollapsibleSection title="Description">
+              {product.description}
+            </CollapsibleSection>
+
             <div className="w-full h-px border sort-border " />
-      
+
             <CollapsibleSection title="Listing">
-            {product.listing}
-          </CollapsibleSection>
+              {product.listing}
+            </CollapsibleSection>
 
             <div className="w-full h-px border sort-border " />
 
-      
             <CollapsibleSection title="Status">
-            {product.status}
-          </CollapsibleSection>
-
+              {product.status}
+            </CollapsibleSection>
           </div>
         </div>
 
- 
         <div className="ml-[120px] w-[1220px] h-[114px] mt-15 mb-15 bg-white dark:bg-[#181818] rounded-[15px] hidden md:flex items-center justify-between px-10 shadow card-shadow app-bg app-text">
           <span className="text-[32px] text-[#333333] satoshi-medium app-text">
             Explore more from this collection
@@ -314,7 +319,6 @@ const ProductPage = () => {
           </div>
         </div>
 
- 
         <div
           ref={scrollRef}
           className=" overflow-x-auto no-scrollbar ml-[120px] mr-[120px] mb-15 gap-8 hidden md:flex"
@@ -330,14 +334,11 @@ const ProductPage = () => {
           ))}
         </div>
 
-  
         <div className=" justify-center mt-10 mb-30 hidden md:flex">
           <button className="px-8 py-3 w-[249px] h-[73px] app-bg app-text border sort-border rounded-lg text-[30px] satoshi-medium ">
             Explore More
           </button>
         </div>
-
-  
       </section>
     </>
   );
