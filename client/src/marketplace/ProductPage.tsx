@@ -156,8 +156,8 @@ const ProductPage = () => {
 
           <div className="block w-[398px] h-px bg-[#333333] dark:bg-[#666666] ml-2 mb-6" />
 
-          <CollapsibleSection title="Listing">
-            {product.listing}
+          <CollapsibleSection title="Status">
+            {product.status}
           </CollapsibleSection>
 
           <div className="block w-[398px] h-px bg-[#333333] dark:bg-[#666666] ml-2 mb-6" />
