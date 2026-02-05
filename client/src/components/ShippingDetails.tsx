@@ -19,7 +19,7 @@ const ShippingDetails: React.FC<ShippingDetailsProps> = ({ onProceed }) => {
       <div className="flex flex-col md:flex-row gap-8 md:-mt-10 mt-5">
         <ShippingForm onProceed={onProceed} />
 
-        <div className="flex-col items-start py-10 w-full hidden md:flex">
+        <div className="flex-col items-start py-10 w-full hidden md:flex ml-25">
           {cart.length === 0 ? (
             <div className="flex flex-col items-center pl-27 justify-center w-full py-20">
               <div className="flex items-center justify-center w-24 h-24 rounded-full search-input mb-4">
@@ -56,7 +56,7 @@ const ShippingDetails: React.FC<ShippingDetailsProps> = ({ onProceed }) => {
                 </React.Fragment>
               ))}
               <div className="w-full h-0.5 bg-[#aaaaaa] rounded-full my-14" />
-              <div className="flex flex-col gap-6 mt-0 w-full text-[28px] satoshi-medium">
+              <div className="flex flex-col gap-6 mt-0 w-full text-[28px] satoshi-medium ">
                 <CartSummary />
               </div>
             </>
