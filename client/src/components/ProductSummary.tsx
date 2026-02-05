@@ -56,7 +56,7 @@ const ProductSummary: React.FC<ProductSummaryProps> = ({
         >
           <AiOutlineClose size={18} className="text-[#888888]" />
         </button>
-        <span className="text-[36px] satoshi-medium">{price}</span>
+        <span className="text-[36px] satoshi-medium">${price}</span>
       </div>
     </div>
   </div>
