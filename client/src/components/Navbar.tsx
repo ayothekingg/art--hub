@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { navLinks, navIcons } from "../data";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TfiClose } from "react-icons/tfi";
 import { BiSolidMessageSquare } from "react-icons/bi";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 import type { Theme } from "../data";
+import { useCartStore } from "../store/cartStore";
+import { FiShoppingCart } from "react-icons/fi";
 import "../App.css";
 
 interface NavbarProps {
@@ -40,9 +42,13 @@ const Navbar: React.FC<NavbarProps> = ({
   const isDark = theme === "dark";
   const getThemeIcon = () => (isDark ? <MdDarkMode /> : <MdOutlineLightMode />);
 
+ 
+  const cart = useCartStore((state) => state.cart);
+  const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+
   const handleThemeToggle = () => {
-    setTheme(isDark ? "light" : "dark");
-  };
+  setTheme(theme === "dark" ? "light" : "dark");
+};
 
   return (
     <nav className="w-full navbar-bg px-4 py-3 flex items-center justify-between md:px-8 md:py-4 relative">
@@ -64,16 +70,35 @@ const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         <div className="flex items-center gap-4 md:gap-3 mt-4 md:mt-[52px] mr-0 md:mr-[153px]">
-          {navIcons.slice(0, 2).map((item) => (
-            <span
-              key={item.label}
-              title={item.label}
-              className="text-2xl md:text-3xl navbar-text cursor-pointer transition-all duration-300 ease-out hover:scale-90"
-              onClick={handleIconClick}
-            >
-              {item.icon}
-            </span>
-          ))}
+         
+          {navIcons.slice(0, 2).map((item) =>
+            item.label === "Cart" ? (
+              <Link
+                key={item.label}
+                to="/Marketplace/Cart"
+                title={item.label}
+                className="text-2xl md:text-3xl navbar-text cursor-pointer transition-all duration-300 ease-out hover:scale-90 relative"
+              >
+                <div className="relative">
+                  <FiShoppingCart size={28} />
+                  {cartCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-400 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs ">
+                      {cartCount}
+                    </span>
+                  )}
+                </div>
+              </Link>
+            ) : (
+              <span
+                key={item.label}
+                title={item.label}
+                className="text-2xl md:text-3xl navbar-text cursor-pointer transition-all duration-300 ease-out hover:scale-90"
+                onClick={handleIconClick}
+              >
+                {item.icon}
+              </span>
+            )
+          )}
 
           <span
             className="hidden md:inline text-2xl md:text-3xl navbar-text cursor-pointer transition-all duration-300 ease-out hover:scale-90"
