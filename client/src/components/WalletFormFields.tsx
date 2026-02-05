@@ -3,9 +3,9 @@ import { Listbox } from "@headlessui/react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 interface WalletFormFieldsProps {
-  selectedNetwork: any;
+  selectedNetwork: any | null;
   setSelectedNetwork: (v: any) => void;
-  selectedToken: any;
+  selectedToken: any | null;
   setSelectedToken: (v: any) => void;
   checked: boolean;
   setChecked: (v: boolean) => void;
@@ -34,7 +34,7 @@ const WalletFormFields: React.FC<WalletFormFieldsProps> = ({
       </label>
       <input
         type="text"
-        className="rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8"
+        className="rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
         placeholder="Enter your wallet address"
       />
     </div>
@@ -48,23 +48,32 @@ const WalletFormFields: React.FC<WalletFormFieldsProps> = ({
             <>
               <Listbox.Button
                 ref={networkButtonRef}
-                className="text-[#888888] rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] pl-3 md:pl-8 pr-4 md:pr-12 search-input flex items-center justify-between"
+                className="text-[#888888] rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] pl-3 md:pl-8 pr-4 md:pr-12 search-input flex items-center justify-between focus:outline-none"
               >
-                <span>
-                  {selectedNetwork ? selectedNetwork.name : "Choose network"}
+                <span
+                  className={`flex items-center gap-2 ${
+                    !selectedNetwork ? "text-[#999999]" : ""
+                  }`}
+                >
+                  {selectedNetwork ? selectedNetwork.name : "SELECT NETWORK"}
                 </span>
-                <span className="ml-auto flex items-center">
-                  <img
-                    src={selectedNetwork.logo}
-                    alt={selectedNetwork.name}
-                    className="md:w-10 md:h-10 w-7 h-7 object-contain ml-4"
-                  />
-                  <span className="ml-2 text-[#888888] text-3xl">
-                    {open ? <FiChevronUp /> : <FiChevronDown />}
-                  </span>
+                <span className="flex items-center gap-2">
+                  {/* Hide chevron if selected and not open */}
+                  {(!selectedNetwork || open) && (
+                    <span className="text-[#888888] text-3xl">
+                      {open ? <FiChevronUp /> : <FiChevronDown />}
+                    </span>
+                  )}
+                  {selectedNetwork && (
+                    <img
+                      src={selectedNetwork.logo}
+                      alt={selectedNetwork.name}
+                      className="md:w-10 md:h-10 w-7 h-7 object-contain"
+                    />
+                  )}
                 </span>
               </Listbox.Button>
-              <Listbox.Options className="absolute z-10 mt-2 w-full search-input rounded-lg shadow-lg">
+              <Listbox.Options className="absolute z-10 mt-2 w-full search-input rounded-lg shadow-lg focus:outline-none">
                 {networks.map((network) => (
                   <Listbox.Option
                     key={network.name}
@@ -99,23 +108,31 @@ const WalletFormFields: React.FC<WalletFormFieldsProps> = ({
             <>
               <Listbox.Button
                 ref={tokenButtonRef}
-                className="text-[#888888] rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] pl-3 md:pl-8 pr-4 md:pr-12 search-input flex items-center justify-between"
+                className="text-[#888888] rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] pl-3 md:pl-8 pr-4 md:pr-12 search-input flex items-center justify-between focus:outline-none"
               >
-                <span>
-                  {selectedToken ? selectedToken.name : "Choose token"}
+                <span
+                  className={`flex items-center gap-2 ${
+                    !selectedToken ? "text-[#999999]" : ""
+                  }`}
+                >
+                  {selectedToken ? selectedToken.name : "SELECT TOKEN"}
                 </span>
-                <span className="ml-auto flex items-center">
-                  <img
-                    src={selectedToken.logo}
-                    alt={selectedToken.name}
-                    className="md:w-10 md:h-10 w-7 h-7 object-contain ml-4"
-                  />
-                  <span className="ml-2 text-[#888888] text-3xl">
-                    {open ? <FiChevronUp /> : <FiChevronDown />}
-                  </span>
+                <span className="flex items-center gap-2">
+                  {(!selectedToken || open) && (
+                    <span className="text-[#888888] text-3xl">
+                      {open ? <FiChevronUp /> : <FiChevronDown />}
+                    </span>
+                  )}
+                  {selectedToken && (
+                    <img
+                      src={selectedToken.logo}
+                      alt={selectedToken.name}
+                      className="md:w-10 md:h-10 w-7 h-7 object-contain"
+                    />
+                  )}
                 </span>
               </Listbox.Button>
-              <Listbox.Options className="absolute z-10 mt-2 w-full search-input rounded-lg shadow-lg">
+              <Listbox.Options className="absolute z-10 mt-2 w-full search-input rounded-lg shadow-lg focus:outline-none">
                 {tokens.map((token) => (
                   <Listbox.Option
                     key={token.name}
