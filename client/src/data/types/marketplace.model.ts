@@ -99,3 +99,14 @@ export interface CartState {
   updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;
 }
+
+import { sortOptions } from "../../data";
+export type SortOption = typeof sortOptions[0];
+export type Filters = {
+  search: string;
+  categories: string[];
+  artists: string[];
+  years: string[];
+  price: number;
+  sort: SortOption;
+};
