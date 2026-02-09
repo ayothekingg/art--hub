@@ -4,17 +4,14 @@ import CartSummary from "./CartSummary";
 import ShippingForm from "./ShippingForm";
 import { useCartStore } from "../store/cartStore";
 import { FiShoppingCart } from "react-icons/fi";
-
-interface ShippingDetailsProps {
-  onProceed?: () => void;
-}
+import type { ShippingDetailsProps } from "../data/types/marketplace.model";
 
 const ShippingDetails: React.FC<ShippingDetailsProps> = ({ onProceed }) => {
   const { cart, removeFromCart, updateQuantity } = useCartStore();
 
   return (
-    <div className="md:px-[120px] px-2.5 app-bg app-text">
-      <div className="w-[525px] h-0.5 bg-[#aaaaaa] rounded-full my-14 ml-auto hidden md:flex" />
+    <div className="md:px-30 px-2.5 app-bg app-text">
+      <div className="w-131.25 h-0.5 bg-[#aaaaaa] rounded-full my-14 ml-auto hidden md:flex" />
 
       <div className="flex flex-col md:flex-row gap-8 md:-mt-10 mt-5">
         <ShippingForm onProceed={onProceed} />
