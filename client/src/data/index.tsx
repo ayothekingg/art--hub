@@ -1,6 +1,8 @@
 export * from "./types";
 
-import type { LinkT, IconT, HeroImageT, EllipseT, AuctionCardT } from "./types";
+import type { LinkT, IconT, EllipseT } from "./types/shared.model";
+import type { HeroImageT } from "./types/home.model";
+import type { AuctionCardT } from "./types/auction.model";
 import { RiSearchLine } from "react-icons/ri";
 import { TbGardenCart } from "react-icons/tb";
 import { IoNotificationsOutline } from "react-icons/io5";
@@ -211,7 +213,7 @@ export const sortOptions = [
   { value: "price_high", label: "High to Low" },
 ];
 
-export const minPrice = 100.0;
+export const minPrice = 0.0;
 export const maxPrice = 200.0;
 
 import productsImg1 from "../assets/products/1.jpg";
