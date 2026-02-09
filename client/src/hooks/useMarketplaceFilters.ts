@@ -1,16 +1,6 @@
 import { useState } from "react";
 import { sortOptions, maxPrice } from "../data";
-
-type SortOption = typeof sortOptions[0];
-
-export type Filters = {
-  search: string;
-  categories: string[];
-  artists: string[];
-  years: string[];
-  price: number; 
-  sort: SortOption;
-};
+import type { Filters } from "../data/types/marketplace.model";
 
 export function useMarketplaceFilters() {
   const [filters, setFilters] = useState<Filters>({
