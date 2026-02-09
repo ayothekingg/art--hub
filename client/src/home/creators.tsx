@@ -22,13 +22,13 @@ const CreatorsSection: React.FC = () => {
   }, [currentIndex]);
 
   return (
-    <section className="h-[251px] md:min-h-[922px] flex flex-col items-start bg-[#E2E2E2] relative">
-      <div className="hidden md:flex flex-row items-start absolute top-[60px] right-12 z-10">
-        <div className="h-[296px] w-2.5 rounded-full bg-[#AEAEAE] overflow-hidden flex flex-col items-center justify-start mr-10 rotate-180">
+    <section className="h-62.75 md:min-h-230.5 flex flex-col items-start bg-[#E2E2E2] relative">
+      <div className="hidden md:flex flex-row items-start absolute top-15 right-12 z-10">
+        <div className="h-74 w-2.5 rounded-full bg-[#AEAEAE] overflow-hidden flex flex-col items-center justify-start mr-10 rotate-180">
           <div className="w-full h-12 bg-[#292929] rounded-full transition-all duration-300" />
         </div>
 
-        <div className="flex flex-col mr-26 mt-2 justify-between text-[40px] text-[#333333] clash-normal h-[296px]">
+        <div className="flex flex-col mr-26 mt-2 justify-between text-[40px] text-[#333333] clash-normal h-74">
           <span className="mb-2">Editorial</span>
           <span className="mb-2">Fashion</span>
           <span className="mb-2">Lifestyle</span>
@@ -36,7 +36,7 @@ const CreatorsSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex md:hidden absolute right-0 z-10 w-[180px] overflow-hidden">
+      <div className="flex md:hidden absolute right-0 z-10 w-45 overflow-hidden">
         <div className="flex flex-row items-center gap-2 whitespace-nowrap text-[9px] text-[#333333] clash-normal">
           <span>Editorial</span>
           <span className="mx-1 text-xl">•</span>
@@ -47,13 +47,13 @@ const CreatorsSection: React.FC = () => {
       </div>
 
       <h2
-        className="text-[24px] md:text-[55px] ml-5 md:ml-[90px] mt-3 md:mt-20 mb-20 clash-bold"
+        className="text-[24px] md:text-[55px] ml-5 md:ml-22.5 mt-3 md:mt-20 mb-20 clash-bold"
         style={{ color: "#333" }}
       >
         TOP CREATORS OF <br /> THE WEEK
       </h2>
       <h1
-        className="text-[13px] md:text-[32px] ml-5  md:ml-[90px] -mt-15 md:mt-30 mr-10 md:mr-[230px] clash"
+        className="text-[13px] md:text-[32px] ml-5  md:ml-22.5 -mt-15 md:mt-30 mr-10 md:mr-57.5 clash"
         style={{ color: "#333" }}
       >
         “Everything always looked better in black and white. Everything always
@@ -65,7 +65,7 @@ const CreatorsSection: React.FC = () => {
       <img
         src={creatorImages[currentIndex]}
         alt="Creator"
-        className={`block absolute right-15 md:right-60 -bottom-15 md:-bottom-70 w-[237px] h-60 md:w-[826px] md:h-auto object-contain z-20${
+        className={`block absolute right-15 md:right-60 -bottom-15 md:-bottom-70 w-59.25 h-60 md:w-206.5 md:h-auto object-contain z-20${
           animate ? " creator-fade-in" : ""
         }`}
       />
