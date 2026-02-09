@@ -5,17 +5,10 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { TfiClose } from "react-icons/tfi";
 import { BiSolidMessageSquare } from "react-icons/bi";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
-import type { Theme } from "../data";
 import { useCartStore } from "../store/cartStore";
 import { FiShoppingCart } from "react-icons/fi";
+import type { NavbarProps } from "../data/types/shared.model";
 import "../App.css";
-
-interface NavbarProps {
-  menuOpen: boolean;
-  setMenuOpen: (open: boolean) => void;
-  theme: Theme;
-  setTheme: (t: Theme) => void;
-}
 
 const Navbar: React.FC<NavbarProps> = ({
   menuOpen,
@@ -64,12 +57,12 @@ const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         <div className="flex-1 flex justify-center md:justify-start">
-          <span className="font-bold text-[24px] md:text-3xl navbar-text mt-4 md:mt-[52px] ml-0 md:ml-[183px] font-serif">
+          <span className="font-bold text-[24px] md:text-3xl navbar-text mt-4 md:mt-13 ml-0 md:ml-45.75 font-serif">
             ARTHUB
           </span>
         </div>
 
-        <div className="flex items-center gap-4 md:gap-3 mt-4 md:mt-[52px] mr-0 md:mr-[153px]">
+        <div className="flex items-center gap-4 md:gap-3 mt-4 md:mt-13 mr-0 md:mr-38.25">
          
           {navIcons.slice(0, 2).map((item) =>
             item.label === "Cart" ? (
@@ -119,7 +112,7 @@ const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      <ul className="hidden md:flex gap-12 list-none font-sans text-lg mt-[52px] md:absolute md:left-1/2 md:-translate-x-1/2">
+      <ul className="hidden md:flex gap-12 list-none font-sans text-lg mt-13 md:absolute md:left-1/2 md:-translate-x-1/2">
         {navLinks.map((link) => (
           <li key={link.name}>
             <NavLink
@@ -152,13 +145,13 @@ const Navbar: React.FC<NavbarProps> = ({
       {menuOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex flex-col">
           <div className="navbar-bg w-full flex items-center justify-between px-4 py-4">
-            <span className="font-bold text-[24px] mt-[15px] ml-2.5 navbar-text font-serif">
+            <span className="font-bold text-[24px] mt-3.75 ml-2.5 navbar-text font-serif">
               ARTHUB
             </span>
 
             <button
               type="button"
-              className="text-3xl mr-2.5 mt-[15px] navbar-text"
+              className="text-3xl mr-2.5 mt-3.75 navbar-text"
               onClick={() => setMenuOpen(false)}
             >
               <TfiClose />
