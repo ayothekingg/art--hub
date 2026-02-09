@@ -1,14 +1,9 @@
 import React from "react";
-
-interface ChatMessageProps {
-  profileImg: string;
-  name: string;
-  message: string;
-}
+import type { ChatMessageProps } from "../data/types/auction.model";
 
 const ChatMessage: React.FC<ChatMessageProps> = ({ profileImg, name, message }) => (
   <div className="flex items-center gap-4 mb-3 md:mb-5">
-    <div className="w-8 h-8 md:w-[70px] md:h-[70px] rounded-full overflow-hidden border border-[#C056097D] flex items-center justify-center bg-white">
+    <div className="w-8 h-8 md:w-17.5 md:h-17.5 rounded-full overflow-hidden border border-[#C056097D] flex items-center justify-center bg-white">
       <img
         src={profileImg}
         alt={`${name} Profile`}
