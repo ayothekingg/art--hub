@@ -4,16 +4,13 @@ import CartSummary from "./CartSummary";
 import { useCartStore } from "../store/cartStore";
 import { FiShoppingCart } from "react-icons/fi";
 import { Link } from "react-router-dom";
-
-interface ShoppingCartProps {
-  onProceed?: () => void;
-}
+import type { ShoppingCartProps } from "../data/types/marketplace.model";
 
 const ShoppingCart: React.FC<ShoppingCartProps> = ({ onProceed }) => {
   const { cart, removeFromCart, updateQuantity } = useCartStore();
 
   return (
-    <div className="md:px-[120px] px-2.5">
+    <div className="md:px-30 px-2.5">
       {cart.length > 0 && (
         <div className="w-full h-0.5 bg-[#aaaaaa] rounded-full my-6 mb-15 hidden md:flex" />
       )}
@@ -27,7 +24,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ onProceed }) => {
             Your cart is empty.
           </div>
           <Link to="/Marketplace">
-            <button className="bg-[#272727] text-white md:text-[30px] text-[20px] satoshi-bold w-[280px] md:w-[530px] h-[60px] md:h-[110px]">
+            <button className="bg-[#272727] text-white md:text-[30px] text-[20px] satoshi-bold w-70 md:w-132.5 h-15 md:h-27.5">
               Check Our Arts
             </button>
           </Link>
@@ -67,7 +64,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ onProceed }) => {
         <div className="flex flex-col md:flex-row justify-between items-start mt-8 mb-15 gap-10 w-full">
           <div className="flex flex-col items-center gap-6 w-full md:w-auto order-1">
             <button
-              className="bg-[#272727] text-white md:text-[30px] text-[20px] satoshi-bold w-[280px] md:w-[530px] h-[60px] md:h-[110px]"
+              className="bg-[#272727] text-white md:text-[30px] text-[20px] satoshi-bold w-70 md:w-132.5 h-15 md:h-27.5"
               onClick={onProceed}
               disabled={cart.length === 0}
             >
@@ -78,7 +75,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ onProceed }) => {
             </span>
           </div>
           <div className="w-full md:w-auto order-2">
-            <div className="md:min-w-[540px]">
+            <div className="md:min-w-135">
               <CartSummary />
             </div>
           </div>
