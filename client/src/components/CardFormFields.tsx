@@ -1,9 +1,5 @@
 import React from "react";
-
-interface CardFormFieldsProps {
-  checked: boolean;
-  setChecked: (v: boolean) => void;
-}
+import type { CardFormFieldsProps } from "../data/types/marketplace.model";
 
 const CardFormFields: React.FC<CardFormFieldsProps> = ({
   checked,
@@ -19,7 +15,7 @@ const CardFormFields: React.FC<CardFormFieldsProps> = ({
         inputMode="numeric"
         pattern="[0-9 ]*"
         maxLength={19}
-        className="rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
+        className="rounded-lg w-full h-12.5 md:w-147.5 md:h-19 md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
         placeholder="1234 5678 9012 3456"
         onInput={e => {
           let value = (e.target as HTMLInputElement).value;
@@ -40,7 +36,7 @@ const CardFormFields: React.FC<CardFormFieldsProps> = ({
           inputMode="numeric"
           pattern="[0-9 /]*"
           maxLength={7}
-          className="rounded-lg md:w-[285px] w-[190px] h-[50px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
+          className="rounded-lg md:w-71.25 w-47.5 h-12.5 md:h-19 md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
           placeholder="MM / YY"
           onInput={e => {
             let value = (e.target as HTMLInputElement).value;
@@ -62,7 +58,7 @@ const CardFormFields: React.FC<CardFormFieldsProps> = ({
           inputMode="numeric"
           pattern="[0-9]*"
           maxLength={3}
-          className="rounded-lg md:w-[277px] w-[190px] h-[50px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
+          className="rounded-lg md:w-69.25 w-47.5 h-12.5 md:h-19 md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
           placeholder="123"
           onInput={(e) => {
             const input = e.target as HTMLInputElement;
@@ -77,7 +73,7 @@ const CardFormFields: React.FC<CardFormFieldsProps> = ({
       </label>
       <input
         type="text"
-        className="rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
+        className="rounded-lg w-full h-12.5 md:w-147.5 md:h-19 md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
         placeholder="Full Name"
       />
     </div>
