@@ -1,19 +1,7 @@
 import React from "react";
 import { Listbox } from "@headlessui/react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-
-interface WalletFormFieldsProps {
-  selectedNetwork: any | null;
-  setSelectedNetwork: (v: any) => void;
-  selectedToken: any | null;
-  setSelectedToken: (v: any) => void;
-  checked: boolean;
-  setChecked: (v: boolean) => void;
-  networkButtonRef: React.RefObject<HTMLButtonElement>;
-  tokenButtonRef: React.RefObject<HTMLButtonElement>;
-  networks: any[];
-  tokens: any[];
-}
+import type { WalletFormFieldsProps } from "../data/types/marketplace.model";
 
 const WalletFormFields: React.FC<WalletFormFieldsProps> = ({
   selectedNetwork,
@@ -34,7 +22,7 @@ const WalletFormFields: React.FC<WalletFormFieldsProps> = ({
       </label>
       <input
         type="text"
-        className="rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
+        className="rounded-lg w-full h-12.5 md:w-147.5 md:h-19 md:text-[26px] text-[18px] search-input pl-3 md:pl-8 focus:outline-none"
         placeholder="Enter your wallet address"
       />
     </div>
@@ -42,13 +30,13 @@ const WalletFormFields: React.FC<WalletFormFieldsProps> = ({
       <label className="md:text-[26px] text-[20px] text-[#888888] satoshi-medium mb-2 md:mb-4 ">
         Select Network
       </label>
-      <div className="relative w-full max-w-[610px]">
+      <div className="relative w-full max-w-152.5">
         <Listbox value={selectedNetwork} onChange={setSelectedNetwork}>
           {({ open }) => (
             <>
               <Listbox.Button
                 ref={networkButtonRef}
-                className="text-[#888888] rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] pl-3 md:pl-8 pr-4 md:pr-12 search-input flex items-center justify-between focus:outline-none"
+                className="text-[#888888] rounded-lg w-full h-12.5 md:w-147.5 md:h-19 md:text-[26px] text-[18px] pl-3 md:pl-8 pr-4 md:pr-12 search-input flex items-center justify-between focus:outline-none"
               >
                 <span
                   className={`flex items-center gap-2 ${
@@ -79,7 +67,7 @@ const WalletFormFields: React.FC<WalletFormFieldsProps> = ({
                     key={network.name}
                     value={network}
                     className={({ active }) =>
-                      `cursor-pointer select-none px-6 md:h-[76px] h-[50px] flex items-center justify-between md:text-[26px] text-[18px] ${
+                      `cursor-pointer select-none px-6 md:h-19 h-12.5 flex items-center justify-between md:text-[26px] text-[18px] ${
                         active ? "bg-[#b0b0b0] text-black" : "text-[#272727]"
                       }`
                     }
@@ -102,13 +90,13 @@ const WalletFormFields: React.FC<WalletFormFieldsProps> = ({
       <label className="md:text-[26px] text-[20px] text-[#888888] satoshi-medium mb-2 md:mb-4">
         Select Token
       </label>
-      <div className="relative w-full max-w-[610px]">
+      <div className="relative w-full max-w-152.5">
         <Listbox value={selectedToken} onChange={setSelectedToken}>
           {({ open }) => (
             <>
               <Listbox.Button
                 ref={tokenButtonRef}
-                className="text-[#888888] rounded-lg w-full h-[50px] md:w-[590px] md:h-[76px] md:text-[26px] text-[18px] pl-3 md:pl-8 pr-4 md:pr-12 search-input flex items-center justify-between focus:outline-none"
+                className="text-[#888888] rounded-lg w-full h-12.5 md:w-147.5 md:h-19 md:text-[26px] text-[18px] pl-3 md:pl-8 pr-4 md:pr-12 search-input flex items-center justify-between focus:outline-none"
               >
                 <span
                   className={`flex items-center gap-2 ${
@@ -138,7 +126,7 @@ const WalletFormFields: React.FC<WalletFormFieldsProps> = ({
                     key={token.name}
                     value={token}
                     className={({ active }) =>
-                      `cursor-pointer select-none px-6 md:h-[76px] h-[50px] flex items-center justify-between text-20px md:text-[24px] ${
+                      `cursor-pointer select-none px-6 md:h-19 h-12.5 flex items-center justify-between text-20px md:text-[24px] ${
                         active ? "bg-[#b0b0b0] text-black" : "text-[#272727]"
                       }`
                     }
