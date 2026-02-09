@@ -7,7 +7,7 @@ const MainDrop: React.FC = () => {
   return (
     <div className="min-h-screen app-bg flex flex-col">
      
-      <div className="hidden md:block items-center text-[24px] satoshi-medium ml-[120px] pt-[50px]">
+      <div className="hidden md:block items-center text-[24px] satoshi-medium ml-30 pt-12.5">
         <Link to="/" className="text-[#999] hover:underline">
           Home
         </Link>
@@ -31,7 +31,7 @@ const MainDrop: React.FC = () => {
         <div className="text-[18px] px-10 md:text-[32px] text-center text-[#616161] satoshi-medium mb-10">
           Turn on notifications so that no drops will miss you.
         </div>
-        <button className="md:px-8 md:py-3 w-[262px] h-[54px] md:w-[420px] md:h-[84px] app-bg app-text border sort-border rounded-lg text-[24px] md:text-[36px] satoshi-bold ">
+        <button className="md:px-8 md:py-3 w-65.5 h-13.5 md:w-105 md:h-21 app-bg app-text border sort-border rounded-lg text-[24px] md:text-[36px] satoshi-bold ">
           Notify Me
         </button>
       </div>
@@ -51,7 +51,7 @@ const MainDrop: React.FC = () => {
       ))}
 
        <div className="hidden md:flex justify-center ">
-            <button className="px-8 py-3 w-[249px] h-[73px] app-bg app-text border sort-border rounded-lg text-[30px] satoshi-medium ">
+            <button className="px-8 py-3 w-62.25 h-18.25 app-bg app-text border sort-border rounded-lg text-[30px] satoshi-medium ">
               See More
             </button>
           </div>
