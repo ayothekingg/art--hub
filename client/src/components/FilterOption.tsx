@@ -1,11 +1,6 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa6";
-
-interface FilterOptionProps {
-  checked: boolean;
-  label: string;
-  onClick: () => void;
-}
+import type { FilterOptionProps } from "../data/types/marketplace.model";
 
 const FilterOption: React.FC<FilterOptionProps> = ({ checked, label, onClick }) => (
   <label className="flex items-center gap-3 cursor-pointer select-none app-text">
