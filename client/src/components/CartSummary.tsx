@@ -14,7 +14,7 @@ const CartSummary: React.FC = () => {
   const grandTotal = total + SHIPPING_COST;
 
   return (
-    <div className="flex flex-col gap-6 w-full min-w-[220px] md:mb-30 md:w-auto md:text-[28px] text-[20px] px-2 satoshi-medium">
+    <div className="flex flex-col gap-6 w-full min-w-55 md:mb-30 md:w-auto md:text-[28px] text-[20px] px-2 satoshi-medium">
       <div className="flex justify-between">
         <span className="text-[#888888]">Products in Cart:</span>
         <span>
