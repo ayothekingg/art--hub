@@ -1,17 +1,7 @@
 import React from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
-
-interface ProductSummaryProps {
-  image: string;
-  title: string;
-  subtitle: string;
-  price: string | number;
-  quantity: number;
-  onIncrease?: () => void;
-  onDecrease?: () => void;
-  onRemove?: () => void;
-}
+import type { ProductSummaryProps } from "../data/types/marketplace.model";
 
 const ProductSummary: React.FC<ProductSummaryProps> = ({
   image,
@@ -29,7 +19,7 @@ const ProductSummary: React.FC<ProductSummaryProps> = ({
         <img
           src={image}
           alt={title}
-          className="w-[166px] h-[196px] object-cover rounded-lg shrink-0"
+          className="w-41.5 h-49 object-cover rounded-lg shrink-0"
         />
         <div className="flex flex-col gap-6 min-w-0 w-full">
           <span className="text-[24px] satoshi-medium leading-tight truncate">{title}</span>
@@ -48,7 +38,7 @@ const ProductSummary: React.FC<ProductSummaryProps> = ({
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-end gap-27 shrink-0 w-[70px]">
+      <div className="flex flex-col items-end gap-27 shrink-0 w-17.5">
         <button
           className="flex items-center justify-center w-10 h-10 rounded-full border border-[#CCCCCC]"
           aria-label="Delete item"
