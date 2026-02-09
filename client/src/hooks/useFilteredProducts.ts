@@ -1,4 +1,4 @@
-import type { Filters } from "./useMarketplaceFilters";
+import type { Filters } from "../data/types/marketplace.model";
 import { marketplaceProducts } from "../data";
 
 export function useFilteredProducts(filters: Filters) {
