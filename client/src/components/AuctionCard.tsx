@@ -1,12 +1,8 @@
 import React from "react";
-import type { AuctionCardT } from "../data";
+import type { AuctionCardT } from "../data/types/auction.model";
 
-type AuctionCardProps = {
-  card: AuctionCardT;
-};
-
-const AuctionCard: React.FC<AuctionCardProps> = ({ card }) => (
-  <div className="relative w-[347px] h-[269px] md:w-[1220px] md:h-[566px] mx-auto md:mt-5 mb-4 overflow-hidden ">
+const AuctionCard: React.FC<{ card: AuctionCardT }> = ({ card }) => (
+  <div className="relative w-86.75 h-67.25 md:w-305 md:h-141.5 mx-auto md:mt-5 mb-4 overflow-hidden ">
     <img
       src={card.image}
       alt="Auction"
@@ -29,7 +25,7 @@ const AuctionCard: React.FC<AuctionCardProps> = ({ card }) => (
     <span className="absolute bottom-38 left-13 md:left-27 text-white text-[12px] md:text-[14px] satoshi-medium z-10 tracking-wide">
       {card.start}
     </span>
-    <span className="absolute bottom-22 md:bottom-15 left-13 md:left-27 text-white text-[10px] md:text-[16px] satoshi-bold z-10 tracking-wide max-w-[600px]">
+    <span className="absolute bottom-22 md:bottom-15 left-13 md:left-27 text-white text-[10px] md:text-[16px] satoshi-bold z-10 tracking-wide max-w-150">
       {card.description}
     </span>
     <div className="absolute bottom-5 md:bottom-12 right-5 md:right-10 flex items-center gap-6 z-10">
@@ -39,7 +35,7 @@ const AuctionCard: React.FC<AuctionCardProps> = ({ card }) => (
       >
         See More
       </a>
-      <button className="text-white text-[14px] h-9 md:text-[24px] satoshi-medium border border-white rounded-lg md:h-[62px] px-3 md:px-6 py-2 bg-transparent cursor-pointer">
+      <button className="text-white text-[14px] h-9 md:text-[24px] satoshi-medium border border-white rounded-lg md:h-15.5 px-3 md:px-6 py-2 bg-transparent cursor-pointer">
         Set A Reminder
       </button>
     </div>
