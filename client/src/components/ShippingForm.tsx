@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { Listbox } from "@headlessui/react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { wallets } from "../data";
-
-interface ShippingFormProps {
-  onProceed?: (formData: any) => void;
-}
+import type { ShippingFormProps } from "../data/types/marketplace.model";
 
 const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
   const [checked, setChecked] = useState(false);
@@ -64,7 +61,7 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="text-[#888888] rounded-lg w-full h-[50px] md:w-[610px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
+          className="text-[#888888] rounded-lg w-full h-12.5 md:w-152.5 md:h-19 pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
           placeholder="Enter your email"
         />
         {errors.email && <span className="text-red-400 md:text-[20px]">{errors.email}</span>}
@@ -111,7 +108,7 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
           name="address"
           value={formData.address}
           onChange={handleChange}
-          className="text-[#888888] rounded-lg w-full h-[50px] md:w-[610px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
+          className="text-[#888888] rounded-lg w-full h-12.5 md:w-152.5 md:h-19 pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
           placeholder="Enter your address"
         />
         {errors.address && <span className="text-red-400 md:text-[20px]">{errors.address}</span>}
@@ -127,14 +124,14 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
           name="city"
           value={formData.city}
           onChange={handleChange}
-          className="text-[#888888] rounded-lg w-full h-[50px] md:w-[610px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
+          className="text-[#888888] rounded-lg w-full h-12.5 md:w-152.5 md:h-19 pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
           placeholder="Enter your city"
         />
         {errors.city && <span className="text-red-400 md:text-[20px]">{errors.city}</span>}
       </div>
 
       {/* Country & Postal Code */}
-      <div className="flex flex-col md:flex-row gap-6 mb-2 md:mb-6 w-full md:w-[610px]">
+      <div className="flex flex-col md:flex-row gap-6 mb-2 md:mb-6 w-full md:w-152.5">
         <div className="flex flex-col flex-1">
           <label className="md:text-[26px] text-[20px] text-[#888888] satoshi-medium mb-1">
             Country
@@ -144,7 +141,7 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
             name="country"
             value={formData.country}
             onChange={handleChange}
-            className="text-[#888888] rounded-lg w-full h-[50px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
+            className="text-[#888888] rounded-lg w-full h-12.5 md:h-19 pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
             placeholder="Country"
           />
           {errors.country && <span className="text-red-400 md:text-[20px]">{errors.country}</span>}
@@ -158,7 +155,7 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
             name="postalCode"
             value={formData.postalCode}
             onChange={handleChange}
-            className="text-[#888888] rounded-lg w-full h-[50px] md:h-[76px] pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
+            className="text-[#888888] rounded-lg w-full h-12.5 md:h-19 pl-6 md:text-[26px] text-[18px] search-input focus:outline-none"
             placeholder="Postal Code"
           />
           {errors.postalCode && <span className="text-red-400 md:text-[20px]">{errors.postalCode}</span>}
@@ -170,11 +167,11 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
         <label className="md:text-[26px] text-[20px] text-[#888888] satoshi-medium mb-2 md:mb-4">
           Choose a wallet
         </label>
-        <div className="relative w-full md:w-[610px]">
+        <div className="relative w-full md:w-152.5">
           <Listbox value={selectedWallet} onChange={handleWalletChange}>
             {({ open }) => (
               <>
-                <Listbox.Button className="text-[#888888] rounded-lg w-full h-[50px] md:w-full md:h-[76px] pl-6 search-input flex items-center justify-between pr-12 focus:outline-none">
+                <Listbox.Button className="text-[#888888] rounded-lg w-full h-12.5 md:w-full md:h-19 pl-6 search-input flex items-center justify-between pr-12 focus:outline-none">
                   <span className="flex items-center gap-4 text-[#aaaaaa] md:text-[26px] text-[18px]">
                     {selectedWallet ? selectedWallet.icon : "SELECT WALLET"}
                   </span>
@@ -182,13 +179,13 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
                     {open ? <FiChevronUp /> : <FiChevronDown />}
                   </span>
                 </Listbox.Button>
-                <Listbox.Options className="absolute z-10 mt-2 md:w-[610px] w-full search-input rounded-lg shadow-lg focus:outline-none">
+                <Listbox.Options className="absolute z-10 mt-2 md:w-152.5 w-full search-input rounded-lg shadow-lg focus:outline-none">
                   {wallets.map((wallet) => (
                     <Listbox.Option
                       key={wallet.name}
                       value={wallet}
                       className={({ active }) =>
-                        `cursor-pointer select-none px-6 md:h-[76px] h-[50px] flex items-center gap-4 ${
+                        `cursor-pointer select-none px-6 md:h-19 h-12.5 flex items-center gap-4 ${
                           active ? "bg-[#c4c4c4]" : "bg-[search-input-bg]"
                         }`
                       }
@@ -206,7 +203,7 @@ const ShippingForm: React.FC<ShippingFormProps> = ({ onProceed }) => {
 
       <button
         type="submit"
-        className="bg-[#272727] text-white md:text-[30px] text-[20px] md:ml-10 satoshi-bold w-[280px] md:w-[605px] h-[60px] md:h-[110px] mb-20 mt-6 self-center"
+        className="bg-[#272727] text-white md:text-[30px] text-[20px] md:ml-10 satoshi-bold w-70 md:w-151.25 h-15 md:h-27.5 mb-20 mt-6 self-center"
       >
         Proceed to Payment
       </button>
