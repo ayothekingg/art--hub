@@ -105,7 +105,7 @@ const [selectedToken, setSelectedToken] = useState(null);
   }, []);
 
   return (
-    <div className="md:px-[120px] px-2.5">
+    <div className="md:px-30 px-2.5">
       <h2 className="text-[28px] satoshi-medium mb-10 hidden md:flex">Payment Details</h2>
       <div className="flex flex-row gap-8 mt-5">
         <div
@@ -140,7 +140,7 @@ const [selectedToken, setSelectedToken] = useState(null);
           />
         </div>
 
-        <div className=" flex-col items-start min-w-[260px] hidden md:flex">
+        <div className=" flex-col items-start min-w-65 hidden md:flex">
           <div className="flex items-center justify-end w-full ml-0 -mt-20 mb-10">
             <span className="flex items-center gap-2">
               <span className="flex items-center justify-center w-10 h-10 rounded-full search-input">
@@ -155,19 +155,19 @@ const [selectedToken, setSelectedToken] = useState(null);
           <span className="text-[28px] satoshi-medium mb-8 ">
             Payment Summary
           </span>
-          <div className="w-[525px] h-0.5 bg-[#aaaaaa] rounded-full my-6 mb-8 ml-auto" />
+          <div className="w-131.25 h-0.5 bg-[#aaaaaa] rounded-full my-6 mb-8 ml-auto" />
           <span className="text-[24px] text-[#616161] satoshi-medium mb-8 ">
             Metamask wallet : 002345KJi90pzzz3
           </span>
           <span className="text-[24px] text-[#616161] satoshi-medium mb-8 ">
             Actively linked to Yaba, Lagos Nigeria.
           </span>
-          <div className="w-[525px] h-0.5 bg-[#aaaaaa] rounded-full my-6 mb-8 ml-auto" />
+          <div className="w-131.25 h-0.5 bg-[#aaaaaa] rounded-full my-6 mb-8 ml-auto" />
           <span className="text-[24px] text-[#616161] satoshi-medium mb-8 ">
             Expected arrival date: Between 22nd <br /> September and 26th
             September 2022.
           </span>
-          <div className="w-[525px] h-0.5 bg-[#aaaaaa] rounded-full my-6 mb-8 ml-auto" />
+          <div className="w-131.25 h-0.5 bg-[#aaaaaa] rounded-full my-6 mb-8 ml-auto" />
           <div className="flex flex-col gap-6 mt-8 w-full">
             <CartSummary />
           </div>
@@ -176,7 +176,7 @@ const [selectedToken, setSelectedToken] = useState(null);
       <div className="flex justify-center md:justify-start">
         <button
           type="button"
-          className="bg-[#272727] text-white md:text-[28px] text-[22px] satoshi-bold md:w-[660px] md:h-[110px] w-[300px] h-[60px] mt-8 mb-20"
+          className="bg-[#272727] text-white md:text-[28px] text-[22px] satoshi-bold md:w-165 md:h-27.5 w-75 h-15 mt-8 mb-20"
           onClick={() => navigate("/Marketplace/ThankYou")}
         >
           Confirm Payment
