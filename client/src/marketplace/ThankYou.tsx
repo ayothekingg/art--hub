@@ -20,7 +20,7 @@ const ThankYou: React.FC = () => {
         <img
           src={thankyouImg}
           alt="Thank you"
-          className="md:w-[320px] md:h-80 w-[280px] h-70 object-contain mb-8"
+          className="md:w-[320px] md:h-80 w-70 h-70 object-contain mb-8"
         />
 
         <h1 className="md:text-[40px] text-[25px] satoshi-bold mb-6  text-center">
