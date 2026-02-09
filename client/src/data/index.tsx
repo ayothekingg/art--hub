@@ -1,4 +1,4 @@
-export * from "./types";
+
 
 import type { LinkT, IconT, EllipseT } from "./types/shared.model";
 import type { HeroImageT } from "./types/home.model";
