@@ -1,17 +1,7 @@
 import React from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
-
-interface CartProductProps {
-  image: string;
-  title: string;
-  subtitle: string;
-  price: string | number;
-  quantity: number;
-  onIncrease?: () => void;
-  onDecrease?: () => void;
-  onRemove?: () => void;
-}
+import type { CartProductProps } from "../data/types/marketplace.model";
 
 const CartProduct: React.FC<CartProductProps> = ({
   image,
@@ -27,7 +17,7 @@ const CartProduct: React.FC<CartProductProps> = ({
     <img
       src={image}
       alt={title}
-      className="md:w-[210px] md:h-[196px] w-[125px] h-[125px] object-cover md:rounded-lg"
+      className="md:w-52.5 md:h-49 w-31.25 h-31.25 object-cover md:rounded-lg"
     />
     <div className="flex flex-col flex-1 md:gap-5 gap-4">
       <span className="md:text-[26px] text-[22px] satoshi-bold md:satoshi-medium">{title}</span>
@@ -46,13 +36,13 @@ const CartProduct: React.FC<CartProductProps> = ({
         </span>
       </div>
       <div className="flex md:hidden items-center mt-2">
-      <div className="flex items-center justify-between w-[125px] h-[35px] -mt-2 rounded-lg border border-[#888888] bg-transparent">
+      <div className="flex items-center justify-between w-31.25 h-8.75 -mt-2 rounded-lg border border-[#888888] bg-transparent">
   <span aria-label="Decrease quantity" className="cursor-pointer ml-3" onClick={onDecrease}>
     <FiMinus size={20} />
   </span>
-  <div className="w-px h-[34px] -ml-2 bg-[#888888]" />
+  <div className="w-px h-8.5 -ml-2 bg-[#888888]" />
   <span className="text-[22px] satoshi-bold app-text">{quantity}</span>
-  <div className="w-px h-[34px] bg-[#888888]" />
+  <div className="w-px h-8.5 bg-[#888888]" />
   <span aria-label="Increase quantity" className="cursor-pointer mr-2" onClick={onIncrease}>
     <FiPlus size={20} />
   </span>
