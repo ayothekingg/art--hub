@@ -1,15 +1,5 @@
 import React from "react";
-
-interface DropCardProps {
-  image: string;
-  status: string;
-  date: string;
-  title: string;
-  description: string;
-  creator: string;
-  action: string;
-  endedTime?: string;
-}
+import type { DropCardProps } from "../data/types/drop.model";
 
 const getStatusColor = (status: string) => {
   if (status === "UPCOMING") return "bg-[#4693ED]";
@@ -29,9 +19,9 @@ const DropCard: React.FC<DropCardProps> = ({
   endedTime,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row items-start ml-2.5 md:ml-[120px]">
+    <div className="flex flex-col md:flex-row items-start ml-2.5 md:ml-30">
       
-      <div className="w-[390px] md:w-[683px] h-[225px] md:h-[441px] overflow-hidden rounded-lg md:mr-10 relative">
+      <div className="w-97.5 md:w-170.75 h-56.25 md:h-110.25 overflow-hidden rounded-lg md:mr-10 relative">
         <img src={image} alt="Drop" className="w-full h-full object-cover" />
 
       <div
@@ -41,7 +31,7 @@ const DropCard: React.FC<DropCardProps> = ({
         </div>
 
        
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-5 w-[360px] h-20 md:w-[578px] md:h-[130px] bg-white/15 backdrop-blur-[2px] border border-white rounded-lg flex flex-col items-start justify-center px-6 z-10">
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-5 w-90 h-20 md:w-144.5 md:h-32.5 bg-white/15 backdrop-blur-[2px] border border-white rounded-lg flex flex-col items-start justify-center px-6 z-10">
           {status === "ENDED" ? (
             <>
               <span className="text-white satoshi-medium text-[16px] md:text-[28px] whitespace-nowrap mb-1">
@@ -74,7 +64,7 @@ const DropCard: React.FC<DropCardProps> = ({
         </div>
       </div>
      
-      <div className="flex flex-col gap-4 md:gap-8 items-start justify-center w-full md:w-auto h-auto md:h-[441px] mt-8 mb-10 md:mb-30 md:mt-0">
+      <div className="flex flex-col gap-4 md:gap-8 items-start justify-center w-full md:w-auto h-auto md:h-110.25 mt-8 mb-10 md:mb-30 md:mt-0">
         <div
           className={`${getStatusColor(status)} hidden md:flex rounded-xl items-center justify-center px-10 py-2 text-white satoshi-bold text-[18px] md:text-[18px]`}
         >
