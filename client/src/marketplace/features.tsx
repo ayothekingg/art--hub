@@ -227,7 +227,7 @@ const Features: React.FC = () => {
       <div className="md:hidden">
         <div className="grid grid-cols-1 gap-4 mt-6">
           {filteredProducts.map((product) => (
-            <Link key={product.id} to={`/marketplace/product/${product.id}`}>
+            <Link key={product.id} to={`/Marketplace/product/${product.id}`}>
               <ProductCard
                 image={product.image}
                 title={product.title}
