@@ -10,7 +10,7 @@ const CollectionProductCard: React.FC<CollectionProductCardProps> = ({
 }) => (
   <div className="w-99.5 h-127.25 md:w-132.25 md:h-144.75 border sort-border shrink-0 scrollbar-hidden flex flex-col items-center justify-between p-6">
    
-    <div className="w-full flex justify-end md:mr-8 md:mt -mt-5 md:mb-2">
+    <div className="w-full flex justify-end md:mr-8 md:mt-0 -mt-5 md:mb-2">
       <PiHeartStraightThin className="text-[35px] md:text-[46px] tborder sort-border cursor-pointer" />
     </div>
     <img
