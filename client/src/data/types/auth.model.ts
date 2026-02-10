@@ -19,3 +19,9 @@ export interface LoginPageProps {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (e: React.FormEvent) => void;
 }
+
+export type RegisterResponse = {
+  success: boolean;
+  message?: string;
+  user?: { name: string; email: string };
+};
