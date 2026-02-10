@@ -56,7 +56,7 @@ const Footer: React.FC<{ menuOpen?: boolean }> = ({ menuOpen }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start max-w-333uto mt-15">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start max-w-333 mx-auto mt-15">
         <div className="hidden md:flex flex-col items-center md:items-start">
           <span className="text-[24px] clash-bold md:text-3xl mt-34 ml-25 app-text">
             ARTHUB
