@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import RegisterPage from "../../auth/RegisterPage";
+import type { RegisterResponse } from "../../data/types/auth.model";
 
 const Register: React.FC = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "", confirmPassword: "" });
@@ -18,7 +19,7 @@ const Register: React.FC = () => {
       setError("Passwords do not match");
       return;
     }
-    let data = {};
+    let data: RegisterResponse;
     try {
       const res = await fetch("/api/register", {
         method: "POST",
@@ -30,9 +31,7 @@ const Register: React.FC = () => {
       setError("Server error. Please try again.");
       return;
     }
-    // @ts-ignore
     if (data.success) setSuccess("Registration successful!");
-    // @ts-ignore
     else setError(data.message || "Registration failed");
   };
 
