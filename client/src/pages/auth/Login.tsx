@@ -16,17 +16,25 @@ const Login: React.FC = () => {
     e.preventDefault();
     setError("");
     setUser(null);
-    const res = await fetch("/api/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-    const data = await res.json();
-    if (data.success) {
-      setUser(data.user);
-      navigate("/"); // Redirect to landing page
-    } else {
-      setError(data.message || "Login failed");
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        setError("Network error. Please try again.");
+        return;
+      }
+      const data = await res.json();
+      if (data.success) {
+        setUser(data.user);
+        navigate("/"); // Redirect to landing page
+      } else {
+        setError(data.message || "Login failed");
+      }
+    } catch (err) {
+      setError("Server error. Please try again.");
     }
   };
 
