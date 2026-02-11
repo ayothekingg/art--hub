@@ -36,3 +36,14 @@ export type ProductT = {
 };
 
 export type CreatorT = string;
+
+
+export interface UseMenuAnimationProps {
+  menuOpen: boolean;
+}
+
+export interface UseMenuAnimationReturn {
+  shouldRender: boolean;
+  isOpening: boolean;
+  isClosing: boolean;
+}
