@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LoginPage from "../../auth/LoginPage";
+import LoginPage from "@/auth/LoginPage";
 
 const Login: React.FC = () => {
   const [form, setForm] = useState({ email: "", password: "" });

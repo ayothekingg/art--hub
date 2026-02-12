@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import RegisterPage from "../../auth/RegisterPage";
-import type { RegisterResponse } from "../../data/types/auth.model";
+import RegisterPage from "@/auth/RegisterPage";
+import type { RegisterResponse } from "@/data/types/auth.model";
 
 const Register: React.FC = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "", confirmPassword: "" });
