@@ -1,6 +1,6 @@
 import React from "react";
-import registerImg from "../assets/auth/register.png";
-import type { RegisterPageProps } from "../data/types/auth.model";
+import registerImg from "@/assets/auth/register.png";
+import type { RegisterPageProps } from "@/data/types/auth.model";
 
 const RegisterPage: React.FC<RegisterPageProps> = ({
   form,
@@ -29,7 +29,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({
             onChange={handleChange}
             required
             type="text"
-            className="text-[#999999] dark:text-[#F4F2F2] bg-[#F4F2F2] dark:bg-[#616161] rounded-4xl w-full h-12.5 md:w-115 md:h-19 pl-6 md:text-[26px] text-[18px] focus:outline-none"
+            className="text-[#999999] dark:text-search-input bg-search-input dark:bg-[#616161] rounded-4xl w-full h-12.5 md:w-115 md:h-19 pl-6 md:text-[26px] text-[18px] focus:outline-none"
           />
           <input
             name="email"
@@ -38,7 +38,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({
             onChange={handleChange}
             required
             type="email"
-            className="text-[#999999] dark:text-[#F4F2F2] bg-[#F4F2F2] dark:bg-[#616161] rounded-4xl w-full h-12.5 md:w-115 md:h-19 pl-6 md:text-[26px] text-[18px] focus:outline-none"
+            className="text-[#999999] dark:text-search-input bg-search-input dark:bg-[#616161] rounded-4xl w-full h-12.5 md:w-115 md:h-19 pl-6 md:text-[26px] text-[18px] focus:outline-none"
           />
           <input
             name="password"
@@ -47,7 +47,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({
             onChange={handleChange}
             required
             type="password"
-            className="text-[#999999] dark:text-[#F4F2F2] bg-[#F4F2F2] dark:bg-[#616161] rounded-4xl w-full h-12.5 md:w-115 md:h-19 pl-6 md:text-[26px] text-[18px] focus:outline-none"
+            className="text-[#999999] dark:text-search-input bg-search-input dark:bg-[#616161] rounded-4xl w-full h-12.5 md:w-115 md:h-19 pl-6 md:text-[26px] text-[18px] focus:outline-none"
           />
           <input
             name="confirmPassword"
@@ -56,7 +56,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({
             onChange={handleChange}
             required
             type="password"
-            className="text-[#999999] dark:text-[#F4F2F2] bg-[#F4F2F2] dark:bg-[#616161] rounded-4xl w-full h-12.5 md:w-115 md:h-19 pl-6 md:text-[26px] text-[18px] focus:outline-none"
+            className="text-[#999999] dark:text-search-input bg-search-input dark:bg-[#616161] rounded-4xl w-full h-12.5 md:w-115 md:h-19 pl-6 md:text-[26px] text-[18px] focus:outline-none"
           />
 
           <button
