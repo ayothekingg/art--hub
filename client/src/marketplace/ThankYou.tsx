@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import useDarkMode from "../hooks/useDarkMode";
-import thankyouImg from "../assets/thankyou.png";
+import useDarkMode from "@/hooks/useDarkMode";
+import thankyouImg from "@/assets/thankyou.png";
 
 const ThankYou: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
