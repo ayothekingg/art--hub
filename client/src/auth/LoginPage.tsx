@@ -28,7 +28,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
             onChange={handleChange}
             required
             type="email"
-            className="text-[#999999] dark:text-[#F4F2F2] bg-[#F4F2F2] dark:bg-[#616161] rounded-4xl w-full h-12.5 md:w-115 md:h-19 pl-6 md:text-[26px] text-[18px] focus:outline-none"
+            className="text-[#999999] dark:text-search-input bg-search-input dark:bg-[#616161] rounded-4xl w-full h-12.5 md:w-115 md:h-19 pl-6 md:text-[26px] text-[18px] focus:outline-none"
           />
 
           <input
@@ -38,7 +38,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
             onChange={handleChange}
             required
             type="password"
-            className="text-[#999999] dark:text-[#F4F2F2] bg-[#F4F2F2] dark:bg-[#616161] rounded-4xl w-full h-12.5 md:w-115 md:h-19 pl-6 md:text-[26px] text-[18px] focus:outline-none"
+            className="text-[#999999] dark:text-search-input bg-search-input dark:bg-[#616161] rounded-4xl w-full h-12.5 md:w-115 md:h-19 pl-6 md:text-[26px] text-[18px] focus:outline-none"
           />
           {/* Forgot password link */}
           <div className="md:mb-5 mb-15 w-full flex md:ml-10 ml-28 justify-center">
