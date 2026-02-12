@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-
-type Theme = "light" | "dark";
+import type { Theme } from "@/data/types/shared.model";
 
 function getSystemTheme(): Theme {
   if (typeof window === "undefined") return "light";
