@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { sortOptions, maxPrice } from "../data";
-import type { Filters } from "../data/types/marketplace.model";
+import { sortOptions, maxPrice } from "@/data";
+import type { Filters } from "@/data/types/marketplace.model";
 
 export function useMarketplaceFilters() {
   const [filters, setFilters] = useState<Filters>({
