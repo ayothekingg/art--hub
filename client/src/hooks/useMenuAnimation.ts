@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import type { UseMenuAnimationProps, UseMenuAnimationReturn } from "../data/types/shared.model";
+import type { UseMenuAnimationProps, UseMenuAnimationReturn } from "@/data/types/shared.model";
 
 export const useMenuAnimation = ({
   menuOpen,
