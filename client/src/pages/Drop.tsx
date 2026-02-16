@@ -8,7 +8,7 @@ const Drop: React.FC = () => {
   const [theme, setTheme] = useDarkMode();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col app-bg">
       <Navbar
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}

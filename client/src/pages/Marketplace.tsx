@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import useDarkMode from "../hooks/useDarkMode";
 import Navbar from "../components/Navbar";
+import Features from "../marketplace/features";
+
 import Footer from "../components/Footer";
 
 const Marketplace: React.FC = () => {
@@ -8,14 +10,17 @@ const Marketplace: React.FC = () => {
   const [theme, setTheme] = useDarkMode();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col app-bg">
       <Navbar
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         theme={theme}
         setTheme={setTheme}
       />
-      <main className="flex-1"></main>
+      <main className="flex-1">
+        <Features />
+       
+      </main>
       <Footer menuOpen={menuOpen} />
     </div>
   );

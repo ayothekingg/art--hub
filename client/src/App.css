@@ -100,6 +100,50 @@ body.dark .others-arrow {
   color: #fff;
 }
 
+.search-input {
+  background: #F4F2F2;
+  color: #999999;
+}
+body.dark .search-input {
+  background: #616161;
+  color: #F4F2F2;
+}
+
+.option-check {
+  background: #D9D9D9;
+}
+.option-check-icon {
+  color: #333;
+}
+body.dark .option-check {
+  background: #616161;
+}
+body.dark .option-check-icon {
+  color: #F4F2F2;
+}
+
+.price-slider {
+  background: #d9d9d9;
+}
+body.dark .price-slider {
+  background: #616161;
+}
+
+.sort-border {
+  border-color: #333333;
+}
+body.dark .sort-border {
+  border-color: #616161;
+}
+
+.card-shadow {
+  box-shadow: 0px 17px 68px 0px #D9E1F45C;
+}
+.dark .card-shadow {
+  box-shadow: 0px 17px 64px 0px #00000080; 
+}
+
+
 @media (prefers-color-scheme: dark) {
   body:not(.light):not(.dark) {
     background: #18181b;
@@ -284,4 +328,12 @@ body.dark .nav-link .active-underline {
 
 .read-the-docs {
   color: #888;
+}
+
+.no-scrollbar {
+  scrollbar-width: none; 
+  -ms-overflow-style: none;  
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; 
 }
