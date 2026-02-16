@@ -1,10 +1,16 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import { connectDB } from "../server/src/config/db.js";
+import authRoutes from "../server/src/routes/auth.routes.js";
+
+dotenv.config();
+connectDB();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-
+app.use("api/auth", authRoutes);
 app.get("/", (req, res) => {
   res.send("Art eCommerce API is running x");
 });
