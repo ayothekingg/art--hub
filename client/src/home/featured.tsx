@@ -28,13 +28,18 @@ const ProductImageHover: React.FC<{ src: string }> = ({ src }) => {
         style={{ zIndex: 2 }}
       >
         <div className="flex items-center gap-4">
-          <span className="text-white text-[40px] font-bold clash-normal">View product</span>
+          <span className="text-white text-[40px] font-bold clash-normal">
+            View product
+          </span>
           <button
             className="w-16 h-16 flex items-center justify-center rounded-full bg-transparent border-white border-[0.41px]"
             aria-label="See creators"
             type="button"
           >
-            <LiaArrowRightSolid style={{ width: "32.82px", height: "auto" }} className="text-white" />
+            <LiaArrowRightSolid
+              style={{ width: "32.82px", height: "auto" }}
+              className="text-white"
+            />
           </button>
         </div>
       </div>
@@ -43,21 +48,21 @@ const ProductImageHover: React.FC<{ src: string }> = ({ src }) => {
 };
 
 const Featured: React.FC = () => (
-  <section className="w-full py-16 bg-white flex flex-col items-start">
-    <h2 className="text-[28px] -mt-20 md:text-[48px] ml-2.5 md:ml-[120px] mb-13 text-center satoshi-bold">
-      Featured products
+  <section className="w-full py-16 app-bg flex flex-col items-start">
+    <h2 className="text-[28px] -mt-20 md:text-[48px] ml-2.5 md:ml-[120px] mb-13 text-center satoshi-bold app-text">
+      Featured Products
     </h2>
-    <hr className="hidden md:block w-[calc(100%-240px)] ml-[120px] mr-[120px] mb-15 border-t border-[#333333]" />
+    <hr className="hidden md:block w-[calc(100%-240px)] ml-[120px] mr-[120px] mb-15 border-t border-main" />
 
   
     <div className="hidden md:block w-full">
       <div className="flex flex-wrap ml-[120px] items-center gap-12">
         <ProductImageHover src={products[0].img} />
         <div className="flex-1 mr-[120px]">
-          <h3 className="text-[36px] text-[#333333] mb-6 clash-medium">
+          <h3 className="text-[36px] app-text mb-6 clash-medium">
             {products[0].title}
           </h3>
-          <p className="text-[#616161] text-[24px] satoshi-normal mb-9">
+          <p className="featured-desc text-[24px] satoshi-normal mb-9">
             {products[0].desc}
           </p>
           <div className="flex items-center mb-2">
@@ -79,28 +84,31 @@ const Featured: React.FC = () => (
                 />
               ))}
             </div>
-            <span className="text-[20px] text-[#333333] satoshi ml-4">
+            <span className="text-[20px] app-text satoshi ml-4">
               64 major creators
             </span>
             <button
-              className="w-16 h-16 flex items-center justify-center rounded-full bg-white border-[#333333] border-[0.41px] ml-35"
+              className="w-16 h-16 flex items-center justify-center rounded-full app-bg border-main border-[0.41px] ml-35"
               aria-label="See creators"
               type="button"
             >
-              <LiaArrowRightSolid style={{ width: "32.82px", height: "auto" }} className="text-[#292D32]" />
+              <LiaArrowRightSolid
+                style={{ width: "32.82px", height: "auto" }}
+                className="featured-arrow"
+              />
             </button>
           </div>
         </div>
       </div>
-      
-      <hr className="w-[calc(100%-240px)] ml-[120px] mr-[120px] mt-15 mb-15 border-t border-[#333333]" />
+
+      <hr className="w-[calc(100%-240px)] ml-[120px] mr-[120px] mt-15 mb-15 border-t border-main" />
       <div className="flex flex-wrap flex-row-reverse mr-[120px] items-center gap-12">
         <ProductImageHover src={products[1].img} />
         <div className="flex-1 ml-[120px] text-left">
-          <h3 className="text-[36px] text-[#333333] mb-6 clash-medium">
+          <h3 className="text-[36px] app-text mb-6 clash-medium">
             {products[1].title}
           </h3>
-          <p className="text-[#616161] text-[24px] satoshi-normal mb-9">
+          <p className="featured-desc text-[24px] satoshi-normal mb-9">
             {products[1].desc}
           </p>
           <div className="flex items-center mb-2">
@@ -122,28 +130,31 @@ const Featured: React.FC = () => (
                 />
               ))}
             </div>
-            <span className="text-[20px] text-[#333333] satoshi ml-4">
+            <span className="text-[20px] app-text satoshi ml-4">
               64 major creators
             </span>
             <button
-              className="w-16 h-16 flex items-center justify-center rounded-full bg-white border-[#333333] border-[0.41px] ml-35"
+              className="w-16 h-16 flex items-center justify-center rounded-full app-bg border-main border-[0.41px] ml-35"
               aria-label="See creators"
               type="button"
             >
-              <LiaArrowRightSolid style={{ width: "32.82px", height: "auto" }} className="text-[#292D32]" />
+              <LiaArrowRightSolid
+                style={{ width: "32.82px", height: "auto" }}
+                className="featured-arrow"
+              />
             </button>
           </div>
         </div>
       </div>
-     
-      <hr className="w-[calc(100%-240px)] ml-[120px] mr-[120px] mt-15 mb-15 border-t border-[#333333]" />
+
+      <hr className="w-[calc(100%-240px)] ml-[120px] mr-[120px] mt-15 mb-15 border-t border-main" />
       <div className="flex flex-wrap ml-[120px] items-center gap-12">
         <ProductImageHover src={products[2].img} />
         <div className="flex-1 mr-[120px]">
-          <h3 className="text-[36px] text-[#333333] mb-6 clash-medium">
+          <h3 className="text-[36px] app-text mb-6 clash-medium">
             {products[2].title}
           </h3>
-          <p className="text-[#616161] text-[24px] satoshi-normal mb-9">
+          <p className="featured-desc text-[24px] satoshi-normal mb-9">
             {products[2].desc}
           </p>
           <div className="flex items-center mb-2">
@@ -165,22 +176,24 @@ const Featured: React.FC = () => (
                 />
               ))}
             </div>
-            <span className="text-[20px] text-[#333333] satoshi ml-4">
+            <span className="text-[20px] app-text satoshi ml-4">
               64 major creators
             </span>
             <button
-              className="w-16 h-16 flex items-center justify-center rounded-full bg-white border-[#333333] border-[0.41px] ml-35"
+              className="w-16 h-16 flex items-center justify-center rounded-full app-bg border-main border-[0.41px] ml-35"
               aria-label="See creators"
               type="button"
             >
-              <LiaArrowRightSolid style={{ width: "32.82px", height: "auto" }} className="text-[#292D32]" />
+              <LiaArrowRightSolid
+                style={{ width: "32.82px", height: "auto" }}
+                className="featured-arrow"
+              />
             </button>
           </div>
         </div>
       </div>
     </div>
 
- 
     <div className="block md:hidden w-full px-5">
       {products.map((product, idx) => (
         <div key={idx} className="mb-14">
@@ -205,10 +218,13 @@ const Featured: React.FC = () => (
               type="button"
               style={{ zIndex: 2 }}
             >
-              <LiaArrowRightSolid style={{ width: "32.82px", height: "auto" }} className="text-white" />
+              <LiaArrowRightSolid
+                style={{ width: "32.82px", height: "auto" }}
+                className="text-white"
+              />
             </button>
           </div>
-          <p className="text-[#616161] text-[15px] satoshi-normal mb-5 -ml-2.5 text-start">
+          <p className="featured-desc text-[15px] satoshi-normal mb-5 -ml-2.5 text-start">
             {product.desc}
           </p>
           <div className="flex justify-start items-center -ml-2.5 mb-2">
@@ -230,13 +246,13 @@ const Featured: React.FC = () => (
                 />
               ))}
             </div>
-            <span className="text-[16px] text-[#333333] satoshi ml-3">
+            <span className="text-[16px] app-text satoshi ml-3">
               64 major creators
             </span>
           </div>
           
 
-          <hr className="block md:hidden w-[180px] border-[0.5px] border-[#333333] -ml-2.5 my-6" />
+          <hr className="block md:hidden w-[180px] border-[0.5px] border-main -ml-2.5 my-6" />
         </div>
       ))}
     </div>

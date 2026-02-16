@@ -1,6 +1,148 @@
-@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@700&display=swap");
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
+
+body {
+  background: #fff;
+  color: #000;
+}
+
+.app-bg {
+  background: #fff;
+}
+.app-text {
+  color: #000;
+}
+.navbar-bg {
+  background: #fff;
+}
+.navbar-text {
+  color: #222;
+}
+.nav-link {
+  color: #292929;
+}
+.nav-link.active {
+  color: #2d3748;
+}
+
+.border-main {
+  border-color: #333333;
+}
+body.dark .border-main {
+  border-color: #616161;
+}
+
+.subscribe-btn {
+  background: #000;
+  color: #fff;
+}
+body.dark .subscribe-btn {
+  background: #272727;
+  color: #fff;
+}
+
+footer .footer-link {
+  color: #333333;
+}
+body.dark footer .footer-link {
+  color: #616161 !important;
+}
+
+body.dark {
+  background: #18181b;
+  color: #fff;
+}
+body.dark .app-bg,
+body.dark .navbar-bg {
+  background: #333333;
+}
+body.dark .app-text,
+body.dark .navbar-text,
+body.dark .nav-link,
+body.dark .nav-link.active {
+  color: #fff;
+}
+
+.featured-desc {
+  color: #616161;
+}
+body.dark .featured-desc {
+  color: #bdbdbd;
+}
+
+.featured-arrow {
+  color: #292d32;
+}
+body.dark .featured-arrow {
+  color: #fff;
+}
+.featured-btn {
+  background: #fff;
+  border: 1px solid #fff;
+}
+body.dark .featured-btn {
+  background: #272727;
+  border: 1px solid #616161;
+}
+.others-btn {
+  background: #fff;
+  border: 1px solid #fff;
+}
+body.dark .others-btn {
+  background: #272727;
+  border: 1px solid #616161;
+}
+.others-arrow {
+  color: #292d32;
+}
+body.dark .others-arrow {
+  color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.light):not(.dark) {
+    background: #18181b;
+    color: #fff;
+  }
+  body:not(.light):not(.dark) .app-bg,
+  body:not(.light):not(.dark) .navbar-bg {
+    background: #333333;
+  }
+  body:not(.light):not(.dark) .app-text,
+  body:not(.light):not(.dark) .navbar-text,
+  body:not(.light):not(.dark) .nav-link,
+  body:not(.light):not(.dark) .nav-link.active {
+    color: #fff;
+  }
+  body:not(.light):not(.dark) .border-main {
+    border-color: #616161;
+  }
+  body:not(.light):not(.dark) .subscribe-btn {
+    background: #272727;
+    color: #fff;
+  }
+  body:not(.light):not(.dark) footer .footer-link {
+    color: #616161 !important;
+  }
+  body:not(.light):not(.dark) .featured-desc {
+    color: #bdbdbd;
+  }
+  body:not(.light):not(.dark) .featured-arrow {
+    color: #fff;
+  }
+  body:not(.light):not(.dark) .featured-btn {
+    background: #272727;
+    border: 1px solid #616161;
+  }
+  body:not(.light):not(.dark) .others-btn {
+    background: #272727;
+    border: 1px solid #616161;
+  }
+  body:not(.light):not(.dark) .others-arrow {
+    color: #fff;
+  }
+}
 
 @keyframes underline {
   from {
@@ -10,7 +152,6 @@
     transform: scaleX(1);
   }
 }
-
 
 @keyframes creator-fade-in {
   0% {
@@ -23,53 +164,69 @@
   }
 }
 
+.animate-underline {
+  animation: underline 0.3s ease-out forwards;
+  transform-origin: left;
+}
+.active-underline {
+  background: #333;
+}
+body.dark .nav-link .active-underline {
+  background: #fff !important;
+}
+
 .creator-fade-in {
   animation: creator-fade-in 3s ease-out 1ms forwards;
 }
 
-
 .satoshi {
-  font-family: 'Satoshi', Arial, sans-serif;
+  font-family: "Satoshi", Arial, sans-serif;
   font-weight: 200;
 }
 .satoshi-normal {
-  font-family: 'Satoshi', Arial, sans-serif;
+  font-family: "Satoshi", Arial, sans-serif;
   font-weight: 300;
 }
 .satoshi-medium {
-  font-family: 'Satoshi', Arial, sans-serif;
+  font-family: "Satoshi", Arial, sans-serif;
   font-weight: 400;
 }
 .satoshi-bold {
-  font-family: 'Satoshi', Arial, sans-serif;
+  font-family: "Satoshi", Arial, sans-serif;
   font-weight: 500;
 }
 
-
 .clash {
-  font-family: 'Clash Display', Arial, sans-serif;
+  font-family: "Clash Display", Arial, sans-serif;
   font-weight: 200;
 }
 .clash-normal {
-  font-family: 'Clash Display', Arial, sans-serif;
+  font-family: "Clash Display", Arial, sans-serif;
   font-weight: 400;
 }
 .clash-medium {
-  font-family: 'Clash Display', Arial, sans-serif;
+  font-family: "Clash Display", Arial, sans-serif;
   font-weight: 500;
 }
 .clash-bold {
-  font-family: 'Clash Display', Arial, sans-serif;
+  font-family: "Clash Display", Arial, sans-serif;
   font-weight: 600;
 }
 .clash-extrabold {
-  font-family: 'Clash Display', Arial, sans-serif;
+  font-family: "Clash Display", Arial, sans-serif;
   font-weight: 700;
 }
-
+.baskerville {
+  font-family: "Libre Baskerville", Baskerville, serif;
+  font-weight: 400;
+}
+.rubiks {
+  font-family: "Rubik", Arial, sans-serif;
+  font-weight: 500;
+}
 
 .bellefair {
-  font-family: 'Bellefair', Arial, sans-serif;
+  font-family: "Bellefair", Arial, sans-serif;
   font-weight: 400;
 }
 
@@ -79,11 +236,11 @@
 }
 
 .hide-scrollbar {
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .hide-scrollbar::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 #root {
@@ -92,7 +249,6 @@
   padding: 0;
   text-align: left;
 }
-
 
 .logo {
   height: 6em;

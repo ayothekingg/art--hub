@@ -25,7 +25,7 @@ export type ProductT = {
   desc: string;
 };
 
-export type CreatorT = string; 
+export type CreatorT = string;
 
 export type AuctionCardT = {
   image: string;
@@ -36,3 +36,6 @@ export type AuctionCardT = {
   description: string;
   loader: number;
 };
+
+
+export type Theme = "light" | "dark";

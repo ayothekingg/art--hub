@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { desktopImages, mobileImages, mobileImageStyle, mobileEllipses } from "../data";
+import {
+  desktopImages,
+  mobileImages,
+  mobileImageStyle,
+  mobileEllipses,
+} from "../data";
 
 const sliderSettings = {
   dots: false,
@@ -30,8 +35,8 @@ const sliderSettings = {
   ],
 };
 
-const MOBILE_ANIMATION_DELAY = 800; 
-const MOBILE_ANIMATION_DURATION = 1000; 
+const MOBILE_ANIMATION_DELAY = 800;
+const MOBILE_ANIMATION_DURATION = 1000;
 
 const Hero: React.FC = () => {
   const [activeIdx, setActiveIdx] = useState(0);
@@ -44,10 +49,9 @@ const Hero: React.FC = () => {
   }, [activeIdx]);
 
   return (
-    <section className="w-full flex flex-col items-center justify-center py-20 bg-white">
-
+    <section className="w-full flex flex-col items-center justify-center py-20 app-bg">
       <h1
-        className="font-bold mb-8 text-center ml-5 mr-5 md:ml-[140px] md:mr-[140px] font-clash"
+        className="font-bold mb-8 text-center ml-5 mr-5 md:ml-[140px] md:mr-[140px] font-clash app-text"
         style={{
           fontFamily: '"Clash Display", Arial, sans-serif',
           fontWeight: 500,
@@ -62,37 +66,28 @@ const Hero: React.FC = () => {
         </span>
       </h1>
 
-      <p
-        className="text-[16px] md:text-[28px] text-[#292929] mb-20 text-center ml-8 mr-8 md:ml-[257px] md:mr-[257px]"
-        style={{
-          fontFamily: '"Satoshi", Arial, sans-serif',
-          fontWeight: 500,
-        }}
-      >
+      <p className="text-[16px] md:text-[28px] mb-20 satoshi-bold text-center ml-8 mr-8 md:ml-[257px] md:mr-[257px] app-text">
         Flip through more than 10,000 vintage shots, old photograghs, historic
         images and captures seamlessly in one place. Register to get top access.
       </p>
 
-    
       <div className="w-full mx-auto mb-10 hidden md:block">
         <Slider {...sliderSettings}>
           {desktopImages.map((img, idx) => (
-            <div key={idx} className="flex justify-center min-w-[358px] max-w-[358px]">
-              <img
-                src={img.src}
-                alt={`Hero ${idx + 1}`}
-                style={img.style}
-              />
+            <div
+              key={idx}
+              className="flex justify-center min-w-[358px] max-w-[358px]"
+            >
+              <img src={img.src} alt={`Hero ${idx + 1}`} style={img.style} />
             </div>
           ))}
         </Slider>
       </div>
 
-      
       <div className="w-full mx-auto mb-20 relative flex justify-center items-center h-[296px] md:hidden">
-          {mobileEllipses.map((ellipse, idx) => (
-            <div key={idx} className={ellipse.className} style={ellipse.style} />
-          ))}
+        {mobileEllipses.map((ellipse, idx) => (
+          <div key={idx} className={ellipse.className} style={ellipse.style} />
+        ))}
         {mobileImages.map((img, idx) => {
           const isActive = idx === activeIdx;
           return (
@@ -104,7 +99,11 @@ const Hero: React.FC = () => {
                 absolute transition-all
                 duration-[${MOBILE_ANIMATION_DURATION}ms] ease-out
                 ${img.rotate}
-                ${isActive ? "z-20 opacity-100 scale-100" : "z-10 opacity-100 scale-100"}
+                ${
+                  isActive
+                    ? "z-20 opacity-100 scale-100"
+                    : "z-10 opacity-100 scale-100"
+                }
               `}
               style={{
                 ...mobileImageStyle,

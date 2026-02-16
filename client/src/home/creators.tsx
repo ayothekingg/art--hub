@@ -46,17 +46,22 @@ const CreatorsSection: React.FC = () => {
         </div>
       </div>
 
-      <h2 className="text-[24px] md:text-[55px] ml-5 md:ml-[90px] mt-3 md:mt-20 mb-20 clash-bold">
+      <h2
+        className="text-[24px] md:text-[55px] ml-5 md:ml-[90px] mt-3 md:mt-20 mb-20 clash-bold"
+        style={{ color: "#333" }}
+      >
         TOP CREATORS OF <br /> THE WEEK
       </h2>
-      <h1 className="text-[13px] md:text-[32px] ml-5  md:ml-[90px] -mt-15 md:mt-30 mr-10 md:mr-[230px] clash">
+      <h1
+        className="text-[13px] md:text-[32px] ml-5  md:ml-[90px] -mt-15 md:mt-30 mr-10 md:mr-[230px] clash"
+        style={{ color: "#333" }}
+      >
         “Everything always looked better in black and white. Everything always
         as if it were the first time; there’s always more people in a black and
         white photograph. It just makes it seem that there were more people at a
         gig, more people at a football match, than with colour photography.
         Everything looks more exciting.” – Jack Lowden
       </h1>
-
       <img
         src={creatorImages[currentIndex]}
         alt="Creator"
