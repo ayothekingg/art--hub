@@ -1,9 +1,9 @@
-export * from './types';
+export * from "./types";
 
-import type { LinkT, IconT, HeroImageT, EllipseT, AuctionCardT } from './types';
-import { RiSearchLine } from 'react-icons/ri';
-import { TbGardenCart } from 'react-icons/tb';
-import { IoNotificationsOutline } from 'react-icons/io5';
+import type { LinkT, IconT, HeroImageT, EllipseT, AuctionCardT } from "./types";
+import { RiSearchLine } from "react-icons/ri";
+import { TbGardenCart } from "react-icons/tb";
+import { IoNotificationsOutline } from "react-icons/io5";
 
 import img1 from "../assets/homecarousels/image.jpg";
 import img2 from "../assets/homecarousels/image2.jpg";
@@ -18,7 +18,7 @@ export const navLinks: LinkT[] = [
   { name: "Home", path: "/" },
   { name: "Marketplace", path: "/Marketplace" },
   { name: "Auctions", path: "/Auctions" },
-  { name: "Drop", path: "/Drop" }
+  { name: "Drop", path: "/Drop" },
 ];
 
 export const navIcons: IconT[] = [
@@ -33,7 +33,6 @@ export const footLinks: LinkT[] = [
   { name: "Rates", path: "/#" },
   { name: "High bids", path: "/#" },
 ];
-
 
 export const desktopImages: HeroImageT[] = [
   {
@@ -78,7 +77,11 @@ export const desktopImages: HeroImageT[] = [
   },
 ];
 
-export const mobileImageStyle = { width: "336px", height: "296px", objectFit: "cover" as const };
+export const mobileImageStyle = {
+  width: "336px",
+  height: "296px",
+  objectFit: "cover" as const,
+};
 
 export const mobileImages: HeroImageT[] = [
   { src: img6, rotate: "rotate-10" },
@@ -86,10 +89,10 @@ export const mobileImages: HeroImageT[] = [
   { src: img8, rotate: "-rotate-10" },
 ];
 
-
 export const mobileEllipses: EllipseT[] = [
   {
-    className: "absolute left-[330px] mt-[-190px] -translate-y-1/2 rounded-full",
+    className:
+      "absolute left-[330px] mt-[-190px] -translate-y-1/2 rounded-full",
     style: {
       width: "80px",
       height: "80px",
@@ -120,7 +123,6 @@ export const mobileEllipses: EllipseT[] = [
   },
 ];
 
-
 import productImg from "../assets/featuredproducts/product.jpg";
 import productImg2 from "../assets/featuredproducts/product2.jpg";
 import productImg3 from "../assets/featuredproducts/product3.jpg";
@@ -136,27 +138,22 @@ export const products = [
   {
     img: productImg,
     title: "The Boolean Egyptian",
-    desc:
-      "Discover the unique story and artistry behind The Boolean Egyptian, a featured product that blends tradition with modern creativity. This piece stands out for its craftsmanship and cultural significance.",
+    desc: "Discover the unique story and artistry behind The Boolean Egyptian, a featured product that blends tradition with modern creativity. This piece stands out for its craftsmanship and cultural significance.",
   },
   {
     img: productImg2,
     title: "Are We There Yet?",
-    desc:
-      "Discover the unique story and artistry behind Are We There Yet? a featured product that blends tradition with modern creativity. This piece stands out for its craftsmanship and cultural significance.",
+    desc: "Discover the unique story and artistry behind Are We There Yet? a featured product that blends tradition with modern creativity. This piece stands out for its craftsmanship and cultural significance.",
   },
   {
     img: productImg3,
     title: "Oloibiri 1997",
-    desc:
-      "Discover the unique story and artistry behind Oloibiri 1997, a featured product that blends tradition with modern creativity. This piece stands out for its craftsmanship and cultural significance.",
+    desc: "Discover the unique story and artistry behind Oloibiri 1997, a featured product that blends tradition with modern creativity. This piece stands out for its craftsmanship and cultural significance.",
   },
 ];
 
-
 import auctionImg from "../assets/auctioncards/auction.jpg";
 import auctionImg2 from "../assets/auctioncards/auction2.jpg";
-
 
 export const auctionCards: AuctionCardT[] = [
   {
@@ -181,7 +178,12 @@ export const auctionCards: AuctionCardT[] = [
   },
 ];
 
-export const categories = ["By Category", "By Price", "By Artist", "Collection Year"];
+export const categories = [
+  "By Category",
+  "By Price",
+  "By Artist",
+  "Collection Year",
+];
 
 export const byCategoryOptions = [
   "Editorials",
@@ -231,9 +233,10 @@ export const marketplaceProducts = [
     creator: "Adaeze Okafor",
     location: "Nigeria",
     views: "1.2k",
-    description: "Philomena ‘22 is a vibrant piece inspired by the rich culture and colors of Nigeria. Adaeze Okafor captures the spirit of tradition and modernity in this unique artwork.",
+    description:
+      "Philomena ‘22 is a vibrant piece inspired by the rich culture and colors of Nigeria. Adaeze Okafor captures the spirit of tradition and modernity in this unique artwork.",
     listing: "Listed on 12th June 2023. Auction ends in 3 days.",
-    status: "Available"
+    status: "Available",
   },
   {
     id: "2",
@@ -243,9 +246,10 @@ export const marketplaceProducts = [
     creator: "Luca Romano",
     location: "Italy",
     views: "2.5k",
-    description: "Boolean Egyptian blends ancient Egyptian motifs with contemporary digital art. Created in Italy, this piece explores the intersection of history and technology by Luca Romano.",
+    description:
+      "Boolean Egyptian blends ancient Egyptian motifs with contemporary digital art. Created in Italy, this piece explores the intersection of history and technology by Luca Romano.",
     listing: "Listed on 5th May 2023. Auction ends in 1 day.",
-    status: "Sold"
+    status: "Sold",
   },
   {
     id: "3",
@@ -255,9 +259,10 @@ export const marketplaceProducts = [
     creator: "Sofia Martins",
     location: "Portugal",
     views: "3.1k",
-    description: "Blanc is a minimalist artwork that celebrates simplicity and elegance. Sofia Martins’ use of white tones evokes a sense of calm and clarity, inspired by Portugal’s serene landscapes.",
+    description:
+      "Blanc is a minimalist artwork that celebrates simplicity and elegance. Sofia Martins’ use of white tones evokes a sense of calm and clarity, inspired by Portugal’s serene landscapes.",
     listing: "Listed on 20th July 2023. Auction ends in 5 days.",
-    status: "Available"
+    status: "Available",
   },
   {
     id: "4",
@@ -267,9 +272,10 @@ export const marketplaceProducts = [
     creator: "Carlos Ruiz",
     location: "Spain",
     views: "4.8k",
-    description: "Ellipsia features dynamic shapes and bold colors, reflecting the lively energy of Spain. This piece is a testament to Carlos Ruiz’s innovative approach to abstract art.",
+    description:
+      "Ellipsia features dynamic shapes and bold colors, reflecting the lively energy of Spain. This piece is a testament to Carlos Ruiz’s innovative approach to abstract art.",
     listing: "Listed on 1st June 2023. Auction ends in 2 days.",
-    status: "Available"
+    status: "Available",
   },
   {
     id: "5",
@@ -279,9 +285,10 @@ export const marketplaceProducts = [
     creator: "Emma de Vries",
     location: "Netherlands",
     views: "5.6k",
-    description: "The Lawmakers is a thought-provoking work that comments on governance and society. Created in the Netherlands, it combines symbolism and modern aesthetics by Emma de Vries.",
+    description:
+      "The Lawmakers is a thought-provoking work that comments on governance and society. Created in the Netherlands, it combines symbolism and modern aesthetics by Emma de Vries.",
     listing: "Listed on 15th August 2023. Auction ends in 7 days.",
-    status: "Available"
+    status: "Available",
   },
   {
     id: "6",
@@ -291,9 +298,10 @@ export const marketplaceProducts = [
     creator: "Nikos Papadopoulos",
     location: "Greece",
     views: "2.3k",
-    description: "Veil draws inspiration from Greek mythology and architecture. Nikos Papadopoulos uses layered textures to create a sense of mystery and depth in this captivating piece.",
+    description:
+      "Veil draws inspiration from Greek mythology and architecture. Nikos Papadopoulos uses layered textures to create a sense of mystery and depth in this captivating piece.",
     listing: "Listed on 30th July 2023. Auction ends in 4 days.",
-    status: "Sold"
+    status: "Sold",
   },
   {
     id: "7",
@@ -303,9 +311,10 @@ export const marketplaceProducts = [
     creator: "Chinonso Eze",
     location: "Nigeria",
     views: "3.9k",
-    description: "Alternating is a rhythmic composition that plays with patterns and contrasts. Inspired by the vibrant life of Nigeria, it showcases Chinonso Eze’s mastery of form and color.",
+    description:
+      "Alternating is a rhythmic composition that plays with patterns and contrasts. Inspired by the vibrant life of Nigeria, it showcases Chinonso Eze’s mastery of form and color.",
     listing: "Listed on 10th September 2023. Auction ends in 6 days.",
-    status: "Available"
+    status: "Available",
   },
   {
     id: "8",
@@ -315,9 +324,10 @@ export const marketplaceProducts = [
     creator: "Greta Schneider",
     location: "Germany",
     views: "4.1k",
-    description: "Rosemary ‘22 is a delicate and expressive piece, reflecting the beauty of nature in Germany. Greta Schneider’s brushwork brings the essence of rosemary to life.",
+    description:
+      "Rosemary ‘22 is a delicate and expressive piece, reflecting the beauty of nature in Germany. Greta Schneider’s brushwork brings the essence of rosemary to life.",
     listing: "Listed on 22nd June 2023. Auction ends in 2 days.",
-    status: "Available"
+    status: "Available",
   },
   {
     id: "9",
@@ -327,8 +337,95 @@ export const marketplaceProducts = [
     creator: "Lucas Dupont",
     location: "Belgium",
     views: "1.8k",
-    description: "Beverly is a modern portrait that captures emotion and personality. Created in Belgium, this artwork highlights Lucas Dupont’s skill in contemporary portraiture.",
+    description:
+      "Beverly is a modern portrait that captures emotion and personality. Created in Belgium, this artwork highlights Lucas Dupont’s skill in contemporary portraiture.",
     listing: "Listed on 3rd July 2023. Auction ends in 1 day.",
-    status: "Sold"
+    status: "Sold",
+  },
+];
+
+import mainauctionimg1 from "../assets/mainauction/1.jpg";
+import mainauctionimg2 from "../assets/mainauction/2.jpg";
+import mainauctionimg3 from "../assets/mainauction/3.jpg";
+
+export const auctionImages = [
+  {
+    image: mainauctionimg1,
+  },
+  {
+    image: mainauctionimg2,
+  },
+  {
+    image: mainauctionimg3,
+  },
+];
+
+import creatorImg1 from "../assets/creatorcard/1.jpg";
+import creatorImg2 from "../assets/creatorcard/2.jpg";
+
+export const creatorImg = [
+  {
+    id: 1,
+    name: "Out of the box",
+    image: creatorImg1,
+    creator: "Dan Murray",
+    date: "12/08/22",
+    highestBid: "0.57 ETH",
+    currentBid: "0.987 ETH",
+  },
+  {
+    id: 2,
+    name: "Falling apart",
+    image: creatorImg2,
+    creator: "Jacob Banks",
+    date: "12/08/22",
+    highestBid: "0.34 ETH",
+    currentBid: "0.99 ETH",
+  },
+];
+
+import livebidProfile1 from "../assets/livebid/1.png";
+import livebidProfile2 from "../assets/livebid/2.png";
+import livebidProfile3 from "../assets/livebid/3.png";
+import livebidProfile4 from "../assets/livebid/4.png";
+import livebidProfile5 from "../assets/livebid/5.png";
+import livebidProfile6 from "../assets/livebid/6.png";
+
+export const livebidMessages = [
+  {
+    id: 1,
+    profileImg: livebidProfile1,
+    name: "Sammy Ellen",
+    message: "i love this, $20 for me",
+  },
+  {
+    id: 2,
+    profileImg: livebidProfile2,
+    name: "Celestina Quinn",
+    message: "gm frens! ready to bidddd",
+  },
+  {
+    id: 3,
+    profileImg: livebidProfile3,
+    name: "Opeyemi Tiwalope",
+    message: "$45 is my bid!",
+  },
+  {
+    id: 4,
+    profileImg: livebidProfile4,
+    name: "Uncle Luca",
+    message: "Instant bid",
+  },
+  {
+    id: 5,
+    profileImg: livebidProfile5,
+    name: "Ella Flynn",
+    message: "tight bid $30",
+  },
+  {
+    id: 6,
+    profileImg: livebidProfile6,
+    name: "Henry Cavill",
+    message: "$45.00 instant bid",
   },
 ];

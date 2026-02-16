@@ -54,7 +54,7 @@ const ProductPage = () => {
 
 
       <section className="min-h-screen flex flex-col app-bg">
-        <div className="block text-[18px] ml-[10px] mt-8 mb-5 satoshi-bold md:mt-15 md:mb-15 md:ml-[120px]">
+        <div className="block text-[18px] ml-[10px] mt-8 mb-5 satoshi-medium md:mt-15 md:text-[24px] md:mb-15 md:ml-[120px]">
           <Link to="/" className="text-[#999] hover:underline">
             Home
           </Link>

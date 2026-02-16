@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useDarkMode from "../hooks/useDarkMode";
 import Navbar from "../components/Navbar";
+import MainAuctions from "../auctions/mainauctions";
 import Footer from "../components/Footer";
 
 const Auctions: React.FC = () => {
@@ -15,7 +16,10 @@ const Auctions: React.FC = () => {
         theme={theme}
         setTheme={setTheme}
       />
-      <main className="flex-1"></main>
+      <main className="flex-1">
+        <MainAuctions />
+
+      </main>
       <Footer menuOpen={menuOpen} />
     </div>
   );
