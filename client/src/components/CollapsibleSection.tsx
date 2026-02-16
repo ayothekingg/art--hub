@@ -1,11 +1,6 @@
 import { useState } from "react";
-import type { ReactNode } from "react";
 import { HiOutlineChevronDown } from "react-icons/hi2";
-
-interface CollapsibleSectionProps {
-  title: string;
-  children: ReactNode;
-}
+import type { CollapsibleSectionProps } from "../data/types/marketplace.model";
 
 const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({ title, children }) => {
   const [open, setOpen] = useState(false);

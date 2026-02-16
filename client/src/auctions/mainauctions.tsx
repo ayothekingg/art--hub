@@ -42,7 +42,7 @@ const MainAuctions: React.FC = () => {
   };
 
   return (
-    <div className="block text-[18px] ml-2.5 mt-8 mb-5 satoshi-medium md:mt-15 md:text-[24px] md:mb-15 md:ml-[120px]">
+    <div className="block text-[18px] ml-2.5 mt-8 mb-5 satoshi-medium md:mt-15 md:text-[24px] md:mb-15 md:ml-30">
       <div className="hidden md:block">
         <Link to="/" className="text-[#999] hover:underline">
           Home
@@ -73,7 +73,6 @@ const MainAuctions: React.FC = () => {
           className="flex flex-row gap-5 md:gap-8 mt-10 md:mt-20 overflow-x-auto whitespace-nowrap no-scrollbar pb-4 pr-4 md:pr-16 scroll-smooth"
         >
           {auctionImages.map((img, idx) => {
-            console.log("auction card img:", img);
             return (
               <div key={idx} className="shrink-0">
                 <Link to="/livebid" state={img}>
@@ -99,11 +98,11 @@ const MainAuctions: React.FC = () => {
       <div className="text-[20px] md:text-[36px] satoshi-bold mb-6 mt-10 md:mt-20 app-text">
         Top bids from popular creators
       </div>
-      <div className="flex flex-col md:flex-row md:justify-between gap-6 mr-[120px] md:gap-0 mb-10 md:mt-20">
+      <div className="flex flex-col md:flex-row md:justify-between gap-6 mr-30 md:gap-0 mb-10 md:mt-20">
         {creatorImg.map((creator, idx) => (
           <div
             key={creator.id}
-            className={`w-full md:w-[545px] ${
+            className={`w-full md:w-136.25 ${
               idx === 0 ? "md:self-start" : "md:self-end"
             }`}
           >
@@ -136,7 +135,7 @@ const MainAuctions: React.FC = () => {
       <div className="flex flex-row gap-4 items-center -mt-5 mb-8 md:hidden justify-center w-full">
         <h3 className="text-[20px] satoshi">Load More</h3>
         <button
-          className="w-[54px] h-[54px] flex items-center justify-center rounded-full app-bg border-main border-[0.41px]"
+          className="w-13.5 h-13.5 flex items-center justify-center rounded-full app-bg border-main border-[0.41px]"
           aria-label="Load More"
           type="button"
         >

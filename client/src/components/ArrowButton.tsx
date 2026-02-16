@@ -1,12 +1,6 @@
 import React from "react";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-
-interface ArrowButtonProps {
-  direction: "left" | "right";
-  onClick: () => void;
-  className?: string;
-  ariaLabel?: string;
-}
+import type { ArrowButtonProps } from "../data/types/auction.model";
 
 const ArrowButton: React.FC<ArrowButtonProps> = ({
   direction,
@@ -16,7 +10,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({
 }) => {
   return (
     <button
-      className={`w-11 h-11 md:w-[70px] md:h-[70px] flex items-center justify-center rounded-full bg-white/20 text-white text-2xl md:text-[32px] cursor-pointer ${className}`}
+      className={`w-11 h-11 md:w-17.5 md:h-17.5 flex items-center justify-center rounded-full bg-white/20 text-white text-2xl md:text-[32px] cursor-pointer ${className}`}
       aria-label={ariaLabel || (direction === "left" ? "Previous" : "Next")}
       style={{
         backdropFilter: "blur(15.54px)",

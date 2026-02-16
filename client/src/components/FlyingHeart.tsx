@@ -1,12 +1,6 @@
 import React from "react";
 import { IoHeart } from "react-icons/io5";
-
-interface FlyingHeartProps {
-  offset: number;
-  color: string;
-  size: number;
-  rotate: number;
-}
+import type { FlyingHeartProps } from "../data/types/auction.model";
 
 const FlyingHeart: React.FC<FlyingHeartProps> = ({ offset, color, size, rotate }) => (
   <span

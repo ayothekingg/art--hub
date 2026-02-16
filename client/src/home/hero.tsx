@@ -51,14 +51,14 @@ const Hero: React.FC = () => {
   return (
     <section className="w-full flex flex-col items-center justify-center py-20 app-bg">
       <h1
-        className="font-bold mb-8 text-center ml-5 mr-5 md:ml-[140px] md:mr-[140px] font-clash app-text"
+        className="font-bold mb-8 text-center ml-5 mr-5 md:ml-35 md:mr-35 font-clash app-text"
         style={{
           fontFamily: '"Clash Display", Arial, sans-serif',
           fontWeight: 500,
           lineHeight: "1.4",
         }}
       >
-        <span className="text-[30px] md:hidden mt-[-34px] block">
+        <span className="text-[30px] md:hidden -mt-8.5 block">
           Photography is poetry and beautiful untold stories
         </span>
         <span className="hidden md:inline text-[64px]">
@@ -66,8 +66,8 @@ const Hero: React.FC = () => {
         </span>
       </h1>
 
-      <p className="text-[16px] md:text-[28px] mb-20 satoshi-bold text-center ml-8 mr-8 md:ml-[257px] md:mr-[257px] app-text">
-        Flip through more than 10,000 vintage shots, old photograghs, historic
+      <p className="text-[16px] md:text-[28px] mb-20 satoshi-bold text-center ml-8 mr-8 md:ml-64.25 md:mr-64.25 app-text">
+        Flip through more than 10,000 vintage shots, old photographs, historic
         images and captures seamlessly in one place. Register to get top access.
       </p>
 
@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
           {desktopImages.map((img, idx) => (
             <div
               key={idx}
-              className="flex justify-center min-w-[358px] max-w-[358px]"
+              className="flex justify-center min-w-89.5 max-w-89.5"
             >
               <img src={img.src} alt={`Hero ${idx + 1}`} style={img.style} />
             </div>
@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
         </Slider>
       </div>
 
-      <div className="w-full mx-auto mb-20 relative flex justify-center items-center h-[296px] md:hidden">
+      <div className="w-full mx-auto mb-20 relative flex justify-center items-center h-74 md:hidden">
         {mobileEllipses.map((ellipse, idx) => (
           <div key={idx} className={ellipse.className} style={ellipse.style} />
         ))}

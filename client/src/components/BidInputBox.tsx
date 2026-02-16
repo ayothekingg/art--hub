@@ -1,10 +1,6 @@
 import React from "react";
 import { RiSendPlaneFill } from "react-icons/ri";
-
-interface BidInputBoxProps {
-  placeholder?: string;
-  onSend?: (value: string) => void;
-}
+import type { BidInputBoxProps } from "../data/types/auction.model";
 
 const BidInputBox: React.FC<BidInputBoxProps> = ({
   placeholder = "Place Bid",
@@ -18,7 +14,7 @@ const BidInputBox: React.FC<BidInputBoxProps> = ({
   };
 
   return (
-    <div className="border  rounded-[30px] w-[302px] h-10 md:w-[404px] md:h-[65px] flex items-center px-4 bg-transparent">
+    <div className="border  rounded-[30px] w-75.5 h-10 md:w-101 md:h-16.25 flex items-center px-4 bg-transparent">
       <input
         type="text"
         value={value}

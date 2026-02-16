@@ -8,7 +8,7 @@ const ProductImageHover: React.FC<{ src: string }> = ({ src }) => {
 
   return (
     <div
-      className="relative w-[610px] h-[305px] cursor-pointer group"
+      className="relative w-152.5 h-76.25 cursor-pointer group"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -49,16 +49,16 @@ const ProductImageHover: React.FC<{ src: string }> = ({ src }) => {
 
 const Featured: React.FC = () => (
   <section className="w-full py-16 app-bg flex flex-col items-start">
-    <h2 className="text-[28px] -mt-20 md:text-[48px] ml-2.5 md:ml-[120px] mb-13 text-center satoshi-bold app-text">
+    <h2 className="text-[28px] -mt-20 md:text-[48px] ml-2.5 md:ml-30 mb-13 text-center satoshi-bold app-text">
       Featured Products
     </h2>
-    <hr className="hidden md:block w-[calc(100%-240px)] ml-[120px] mr-[120px] mb-15 border-t border-main" />
+    <hr className="hidden md:block w-[calc(100%-240px)] ml-30 mr-30 mb-15 border-t border-main" />
 
   
     <div className="hidden md:block w-full">
-      <div className="flex flex-wrap ml-[120px] items-center gap-12">
+      <div className="flex flex-wrap ml-30 items-center gap-12">
         <ProductImageHover src={products[0].img} />
-        <div className="flex-1 mr-[120px]">
+        <div className="flex-1 mr-30">
           <h3 className="text-[36px] app-text mb-6 clash-medium">
             {products[0].title}
           </h3>
@@ -101,10 +101,10 @@ const Featured: React.FC = () => (
         </div>
       </div>
 
-      <hr className="w-[calc(100%-240px)] ml-[120px] mr-[120px] mt-15 mb-15 border-t border-main" />
-      <div className="flex flex-wrap flex-row-reverse mr-[120px] items-center gap-12">
+      <hr className="w-[calc(100%-240px)] ml-30 mr-30 mt-15 mb-15 border-t border-main" />
+      <div className="flex flex-wrap flex-row-reverse mr-30 items-center gap-12">
         <ProductImageHover src={products[1].img} />
-        <div className="flex-1 ml-[120px] text-left">
+        <div className="flex-1 ml-30 text-left">
           <h3 className="text-[36px] app-text mb-6 clash-medium">
             {products[1].title}
           </h3>
@@ -147,10 +147,10 @@ const Featured: React.FC = () => (
         </div>
       </div>
 
-      <hr className="w-[calc(100%-240px)] ml-[120px] mr-[120px] mt-15 mb-15 border-t border-main" />
-      <div className="flex flex-wrap ml-[120px] items-center gap-12">
+      <hr className="w-[calc(100%-240px)] ml-30 mr-30 mt-15 mb-15 border-t border-main" />
+      <div className="flex flex-wrap ml-30 items-center gap-12">
         <ProductImageHover src={products[2].img} />
-        <div className="flex-1 mr-[120px]">
+        <div className="flex-1 mr-30">
           <h3 className="text-[36px] app-text mb-6 clash-medium">
             {products[2].title}
           </h3>
@@ -197,7 +197,7 @@ const Featured: React.FC = () => (
     <div className="block md:hidden w-full px-5">
       {products.map((product, idx) => (
         <div key={idx} className="mb-14">
-          <div className="relative w-[388px] h-64 mx-auto mb-6 -mt-6 -ml-2.5">
+          <div className="relative w-97 h-64 mx-auto mb-6 -mt-6 -ml-2.5">
             <img
               src={product.img}
               alt={product.title}
@@ -252,7 +252,7 @@ const Featured: React.FC = () => (
           </div>
           
 
-          <hr className="block md:hidden w-[180px] border-[0.5px] border-main -ml-2.5 my-6" />
+          <hr className="block md:hidden w-45 border-[0.5px] border-main -ml-2.5 my-6" />
         </div>
       ))}
     </div>

@@ -1,13 +1,6 @@
 import React from "react";
 import { HiChevronUp, HiChevronDown } from "react-icons/hi2";
-
-interface FilterSectionProps {
-  title: string;
-  open: boolean;
-  onToggle: () => void;
-  children: React.ReactNode;
-  chevronMargin?: string;
-}
+import type { FilterSectionProps } from "../data/types/marketplace.model";  
 
 const FilterSection: React.FC<FilterSectionProps> = ({
   title,

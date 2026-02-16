@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IoHeart } from "react-icons/io5";
 import FlyingHeart from "./FlyingHeart";
+import type { FlyingHeartButtonProps } from "../data/types/auction.model";
 
 const HEART_COLORS = [
   "#E31616", // red
@@ -11,10 +12,6 @@ const HEART_COLORS = [
   "#FF61A6", // pink
 ];
 
-interface FlyingHeartButtonProps {
-  className?: string;
-  heartCount?: number;
-}
 
 const FlyingHeartButton: React.FC<FlyingHeartButtonProps> = ({
   className = "",
@@ -44,7 +41,7 @@ const FlyingHeartButton: React.FC<FlyingHeartButtonProps> = ({
   };
 
   return (
-    <div className={`w-[55px] h-[55px] md:w-[65px] md:h-[65px] rounded-full bg-white/20 md:bg-transparent flex items-center justify-center border sort-border shadow relative z-10 ${className}`}>
+    <div className={`w-13.75 h-13.75 md:w-16.25 md:h-16.25 rounded-full bg-white/20 md:bg-transparent flex items-center justify-center border sort-border shadow relative z-10 ${className}`}>
       <div className="absolute bottom-full left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none">
         {flyingHearts.map((heart) => (
           <FlyingHeart

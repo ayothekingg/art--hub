@@ -1,6 +1,8 @@
-export * from "./types";
 
-import type { LinkT, IconT, HeroImageT, EllipseT, AuctionCardT } from "./types";
+
+import type { LinkT, IconT, EllipseT } from "./types/shared.model";
+import type { HeroImageT } from "./types/home.model";
+import type { AuctionCardT } from "./types/auction.model";
 import { RiSearchLine } from "react-icons/ri";
 import { TbGardenCart } from "react-icons/tb";
 import { IoNotificationsOutline } from "react-icons/io5";
@@ -211,7 +213,7 @@ export const sortOptions = [
   { value: "price_high", label: "High to Low" },
 ];
 
-export const minPrice = 100.0;
+export const minPrice = 0.0;
 export const maxPrice = 200.0;
 
 import productsImg1 from "../assets/products/1.jpg";
@@ -428,4 +430,150 @@ export const livebidMessages = [
     name: "Henry Cavill",
     message: "$45.00 instant bid",
   },
+];
+
+import dropImg1 from "../assets/dropcards/1.jpg";
+import dropImg2 from "../assets/dropcards/2.jpg";
+import dropImg3 from "../assets/dropcards/3.jpg";
+import dropImg4 from "../assets/dropcards/4.jpg";
+
+
+export const dropCards = [
+  {
+    id: 1,
+    image: dropImg1,
+    status: "UPCOMING",
+    date: "November 21 at 11 am WAT",
+    title: "Eyo : Eko For Show",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Amet odio a aenean quis vitae tempus. Sed nunc tempus aliquet lectus ut vulputate.",
+    creator: "Aliya Minat",
+    action: "Get Notified",
+  },
+  {
+    id: 2,
+    image: dropImg2,
+    status: "LIVE NOW",
+    date: "November 22 at 2 pm WAT",
+    title: "Ginger Suburbs",
+    description:
+      "Experience the vibrant art scene of Lagos with exclusive pieces and live showcases.",
+    creator: "Tunde Bakare",
+    action: "Join Now",
+  },
+  {
+    id: 3,
+    image: dropImg3,
+    status: "ENDED",
+    date: "December 1 at 4 pm WAT",
+    title: "Colors of Africa",
+    description:
+      "A celebration of African culture through colors, patterns, and stories.",
+    creator: "Chinelo Okafor",
+    action: "View",
+  },
+  {
+    id: 4,
+    image: dropImg4,
+    status: "ENDED",
+    date: "October 15 at 10 am WAT",
+    title: "Warped ‘99",
+    description:
+      "A dreamy collection of pastel artworks by emerging talents.",
+    creator: "Samuel Adeyemi",
+    action: "View",
+  },
+];
+
+
+
+import coinbaseImg from "../assets/wallet/coinbase.png";
+import phantomImg from "../assets/wallet/phantom.png";
+import metamaskImg from "../assets/wallet/metamask.png";
+
+export const wallets = [
+  {
+    name: "Coinbase",
+    icon: (
+      <img
+        src={coinbaseImg}
+        alt="Coinbase"
+        className="md:w-36 md:h-36  w-25 h-25 rounded-full"
+      />
+    ),
+  },
+  {
+    name: "Phantom",
+    icon: (
+      <img
+        src={phantomImg}
+        alt="Phantom"
+        className="md:w-36 md:h-9 w-25 h-6 rounded-full"
+      />
+    ),
+  },
+  {
+    name: "Metamask",
+    icon: (
+      <img
+        src={metamaskImg}
+        alt="Metamask"
+        className="md:w-36 md:h-36 w-28 h-28 rounded-full"
+      />
+    ),
+  },
+];
+
+export const inputFields = [
+  {
+    label: "Your email",
+    type: "text",
+    placeholder: "Enter your email",
+    name: "email",
+  },
+  {
+    label: "Your full name",
+    type: "text",
+    placeholder: "Enter your full name",
+    name: "fullName",
+  },
+  {
+    label: "City",
+    type: "text",
+    placeholder: "Enter your city",
+    name: "city",
+  },
+  {
+    label: "Phone Number",
+    type: "text",
+    placeholder: "Enter your phone number",
+    name: "phone",
+  },
+];
+
+
+
+import ethereumLogo from "../assets/networks/eth.svg";
+import polygonLogo from "../assets/networks/matic.svg";
+import solanaLogo from "../assets/networks/sol.svg";
+import usdtLogo from "../assets/networks/usdt.svg";
+import usdcLogo from "../assets/networks/usdc.svg";
+import maticLogo from "../assets/networks/matic.svg";
+import bnbLogo from "../assets/networks/bnb.svg";
+
+
+
+export const networks = [
+  { name: "Ethereum", logo: ethereumLogo },
+  { name: "Polygon", logo: polygonLogo },
+  { name: "Solana", logo: solanaLogo },
+  { name: "BNB", logo: bnbLogo },
+];
+
+export const tokens = [
+  { name: "USDT", logo: usdtLogo },
+  { name: "USDC", logo: usdcLogo },
+  { name: "ETH", logo: ethereumLogo },
+  { name: "MATIC", logo: maticLogo },
+  { name: "BNB", logo: bnbLogo },
 ];

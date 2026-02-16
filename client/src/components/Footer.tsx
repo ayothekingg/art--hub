@@ -10,7 +10,7 @@ const Footer: React.FC<{ menuOpen?: boolean }> = ({ menuOpen }) => {
   return (
     <footer className="app-bg app-text py-8 px-4 w-full shadow-lg z-50">
       <div className="mb-8 mt-5 md:mt-20 flex justify-center">
-        <div className="app-bg border border-main max-w-[1332px] w-full h-80 flex-col justify-center items-center shadow-md px-8 hidden md:flex">
+        <div className="app-bg border border-main max-w-333 w-full h-80 flex-col justify-center items-center shadow-md px-8 hidden md:flex">
           <h2 className="text-[30.21px] baskerville mb-2 app-text">
             NEWSLETTER
           </h2>
@@ -24,11 +24,11 @@ const Footer: React.FC<{ menuOpen?: boolean }> = ({ menuOpen }) => {
             <input
               type="email"
               placeholder="ENTER YOUR EMAIL"
-              className="border border-main w-[446px] h-[60px] baskerville text-[16px] app-text placeholder:app-text placeholder:text-[16px] pl-8 focus:outline-none focus:ring-0"
+              className="border border-main w-111.5 h-15 baskerville text-[16px] app-text placeholder:app-text placeholder:text-[16px] pl-8 focus:outline-none focus:ring-0"
             />
             <button
               type="submit"
-              className="subscribe-btn w-[181.63px] h-[60px] baskerville ml-[15px] text-[16px]"
+              className="subscribe-btn w-[181.63px] h-15 baskerville ml-3.75 text-[16px]"
             >
               SUBSCRIBE
             </button>
@@ -44,7 +44,7 @@ const Footer: React.FC<{ menuOpen?: boolean }> = ({ menuOpen }) => {
             <input
               type="email"
               placeholder="ENTER YOUR EMAIL"
-              className="border border-main w-[340px] satoshi-medium h-[46px] text-[10px] app-text placeholder:app-text placeholder:text-[10px] pl-4 focus:outline-none focus:ring-0"
+              className="border border-main w-85 satoshi-medium h-11.5 text-[10px] app-text placeholder:app-text placeholder:text-[10px] pl-4 focus:outline-none focus:ring-0"
             />
             <button
               type="submit"
@@ -56,9 +56,9 @@ const Footer: React.FC<{ menuOpen?: boolean }> = ({ menuOpen }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start max-w-[1332px] mx-auto mt-15">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start max-w-333uto mt-15">
         <div className="hidden md:flex flex-col items-center md:items-start">
-          <span className="text-[24px] clash-bold md:text-3xl mt-[136px] ml-[100px] app-text">
+          <span className="text-[24px] clash-bold md:text-3xl mt-34 ml-25 app-text">
             ARTHUB
           </span>
         </div>

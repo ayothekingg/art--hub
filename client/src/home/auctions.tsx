@@ -22,7 +22,7 @@ const Auctions = () => {
 
   return (
     <section
-      className="h-[336px] md:h-auto"
+      className="h-84 md:h-auto"
       style={{
         width: "100%",
         background:
@@ -32,10 +32,10 @@ const Auctions = () => {
       }}
     >
       <div className="hidden md:block">
-        <h2 className="text-white satoshi-bold text-[22px] md:text-[40px] mb-4 ml-4 md:ml-[90px]">
+        <h2 className="text-white satoshi-bold text-[22px] md:text-[40px] mb-4 ml-4 md:ml-22.5">
           See Upcoming Auctions and Exhibitions
         </h2>
-        <div className="flex items-center w-[667px] ml-[120px] text-white">
+        <div className="flex items-center w-166.75 ml-30 text-white">
           <div className="flex-1 h-px bg-white rounded" />
           <MdKeyboardArrowRight className="-ml-3" size={20} />
         </div>
@@ -45,7 +45,7 @@ const Auctions = () => {
         <AuctionCard card={card} />
       </div>
 
-      <div className="hidden md:flex items-center justify-between w-[1220px] ml-[90px] mt-6">
+      <div className="hidden md:flex items-center justify-between w-305 ml-22.5 mt-6">
         <div
           style={{
             width: "295.6947px",
