@@ -6,7 +6,7 @@ import type { CreatorBidSectionProps } from "@/data/types/auction.model";
 const CreatorBidSection = ({ creators }: CreatorBidSectionProps) => {
   return (
     <>
-      <div className="text-[20px] md:text-[36px] satoshi-bold mb-6 mt-10 md:mt-20 app-text">
+      <div className="text-xl md:text-2xl lg:text-3xl satoshi-bold mb-6 mt-10 md:mt-20 app-text">
         Top bids from popular creators
       </div>
       
@@ -24,15 +24,15 @@ const CreatorBidSection = ({ creators }: CreatorBidSectionProps) => {
               highestBid={creator.highestBid}
             />
             <div className="mt-4 md:mt-15 px-2 md:px-0 space-y-6">
-              <div className="text-[20px] md:text-[28px] text-[#616161] satoshi-medium">
+              <div className="text-base md:text-xl lg:text-2xl text-[#616161] satoshi-medium">
                 Creator : <span className="app-text">{creator.creator}</span>
               </div>
 
-              <div className="text-[20px] md:text-[28px] text-[#616161] satoshi-medium">
+              <div className="text-base md:text-xl lg:text-2xl text-[#616161] satoshi-medium">
                 Date : <span className="app-text">{creator.date}</span>
               </div>
               
-              <div className="text-[20px] md:text-[28px] text-[#616161] satoshi-medium hidden md:block">
+              <div className="text-base md:text-xl lg:text-2xl text-[#616161] satoshi-medium hidden md:block">
                 Highest Bid : <span className="app-text">{creator.highestBid}</span>
               </div>
 

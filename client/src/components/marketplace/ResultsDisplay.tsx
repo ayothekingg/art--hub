@@ -10,14 +10,14 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({
 
   if (isMobile) {
     return (
-      <span className="block md:hidden text-[18px] -ml-2 mt-2 -mb-2 text-[#BCB7B7] italic satoshi">
+      <span className="block md:hidden text-base sm:text-lg text-[#BCB7B7] italic satoshi -ml-2 mt-2 -mb-2">
         {text}
       </span>
     );
   }
 
   return (
-    <span className="hidden md:block text-[24px] ml-10 text-[#333333] satoshi app-text">
+    <span className="hidden md:block text-lg lg:text-xl ml-10 text-[#333333] satoshi app-text">
       {text}
     </span>
   );

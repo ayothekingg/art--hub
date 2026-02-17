@@ -24,12 +24,12 @@ const CreatorCard: React.FC<CreatorCardProps> = ({ image, name, highestBid }) =>
       {(name || highestBid) && (
         <div className="flex justify-between items-center w-full md:px-8 px-5 md:mt-6 md:block">
           {name && (
-            <span className="text-[20px] md:text-[40px] satoshi-bold text-left">
+            <span className="text-lg md:text-2xl lg:text-3xl satoshi-bold text-left">
               {name}
             </span>
           )}
           {highestBid && (
-            <span className="text-[20px] satoshi-bold text-right md:hidden">
+            <span className="text-base md:text-2xl lg:text-3xl satoshi-bold text-right md:hidden">
               {highestBid}
             </span>
           )}
