@@ -45,6 +45,9 @@ export const useLogin = () => {
       const data: LoginResponse = await res.json();
 
       if (res.ok && data.user) {
+        if (data.token) {
+          window.localStorage.setItem("authToken", data.token);
+        }
         timerRef.current = setTimeout(() => navigate("/"), 500);
       } else {
         setError(data.message || "Login failed. Please try again.");
