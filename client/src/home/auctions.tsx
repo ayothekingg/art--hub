@@ -9,10 +9,12 @@ const Auctions = () => {
   const [current, setCurrent] = useState(0);
   const card = auctionCards[current];
 
-  const handlePrev = () =>
-    setCurrent((prev) => (prev === 0 ? auctionCards.length - 1 : prev - 1));
-  const handleNext = () =>
-    setCurrent((prev) => (prev === auctionCards.length - 1 ? 0 : prev + 1));
+  const handlePrev = () => {
+    if (current > 0) setCurrent(current - 1);
+  };
+  const handleNext = () => {
+    if (current < auctionCards.length - 1) setCurrent(current + 1);
+  };
 
   const swipeHandlers = useSwipeable({
     onSwipedLeft: handleNext,
@@ -51,8 +53,8 @@ const Auctions = () => {
           />
         </div>
         <div className="flex gap-4 ml-8">
-          <ArrowButton direction="left" onClick={handlePrev} />
-          <ArrowButton direction="right" onClick={handleNext} />
+          <ArrowButton direction="left" onClick={handlePrev} disabled={current === 0} />
+          <ArrowButton direction="right" onClick={handleNext} disabled={current === auctionCards.length - 1} />
         </div>
       </div>
     </section>
