@@ -4,8 +4,10 @@ import type { RegisterForm, RegisterResponse } from "@/data/types/auth.model";
 
 const validate = (form: RegisterForm): string | null => {
   if (!form.name.trim()) return "Name is required.";
-  if (!form.email.includes("@")) return "Enter a valid email.";
-  if (form.password.length < 8) return "Password must be at least 8 characters.";
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(form.email)) return "Enter a valid email.";
+  if (form.password.length < 8)
+    return "Password must be at least 8 characters.";
   if (form.password !== form.confirmPassword) return "Passwords do not match.";
   return null;
 };
@@ -45,7 +47,7 @@ export const useRegister = () => {
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:4000/api/auth/register", {
+      const res = await fetch("/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -58,7 +60,10 @@ export const useRegister = () => {
       const data: RegisterResponse = await res.json();
 
       if (res.ok) {
-        setSuccess(data.message || "Registration successful!");
+        if (data && (data as any).token) {
+          window.localStorage.setItem("token", (data as any).token);
+        }
+        setSuccess("Registration successful!");
         timerRef.current = setTimeout(() => navigate("/"), 1000);
       } else {
         setError(data?.message || "Registration failed. Please try again.");
