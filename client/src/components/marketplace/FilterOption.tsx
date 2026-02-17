@@ -8,9 +8,9 @@ const FilterOption: React.FC<FilterOptionProps> = ({ checked, label, onClick }) 
       className="option-check flex items-center justify-center w-6 h-6 rounded border-[#B0B0B0] border-none"
       onClick={onClick}
     >
-      {checked && <FaCheck className="option-check-icon text-[16px]" />}
+      {checked && <FaCheck className="option-check-icon text-base md:text-lg lg:text-xl" />}
     </span>
-    <span className="satoshi text-[18px] md:text-[24px] text-[#292929] app-text">{label}</span>
+    <span className="satoshi text-base md:text-lg lg:text-xl text-[#292929] app-text">{label}</span>
   </label>
 );
 

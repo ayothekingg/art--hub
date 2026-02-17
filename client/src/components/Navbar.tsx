@@ -84,12 +84,13 @@ const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         <div className="flex-1 flex justify-center md:justify-start">
-          <span className="font-bold text-[24px] md:text-3xl navbar-text mt-4 md:mt-13 ml-0 md:ml-45.75 font-serif">
+          <Link to="/" className="font-bold text-[24px] md:text-3xl navbar-text mt-4 md:mt-13 ml-0 md:ml-45.75 font-serif">
             ARTHUB
-          </span>
+          </Link>
         </div>
 
-        <div className="flex items-center gap-4 md:gap-3 mt-4 md:mt-13 mr-0 md:mr-38.25">
+    
+        <div className="flex items-center gap-3 md:gap-6 mt-4 md:mt-13 mr-0 md:mr-38.25">
           {navIcons.slice(0, 2).map((item) =>
             item.label === "Cart" ? (
               <Link
@@ -128,7 +129,7 @@ const Navbar: React.FC<NavbarProps> = ({
           </span>
 
           <span
-            className="ml-2 text-2xl md:text-3xl cursor-pointer"
+            className=" text-2xl md:text-3xl cursor-pointer"
             title={`Toggle theme`}
             aria-label="Toggle theme"
             onClick={handleThemeToggle}
@@ -188,9 +189,9 @@ const Navbar: React.FC<NavbarProps> = ({
           >
             {/* Header */}
             <div className="w-full flex items-center justify-between px-4 py-4 border-b border-opacity-10">
-              <span className="font-bold text-[24px] mt-3.75 ml-2.5 navbar-text font-serif">
+              <Link to="/" className="font-bold text-[24px] mt-3.75 ml-2.5 navbar-text font-serif" onClick={handleCloseMenu}>
                 ARTHUB
-              </span>
+              </Link>
 
               <button
                 type="button"

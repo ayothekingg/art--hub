@@ -9,8 +9,7 @@ const MarketplaceLayout: React.FC<MarketplaceLayoutProps> = ({
   mobileBreadcrumb,
 }) => {
   return (
-    <section className="w-full max-w-7xl mx-auto md:ml-30 ml-0 mt-10 md:mt-25 px-4 relative app-bg app-text">
-      {/* Mobile breadcrumb */}
+<section className="w-full max-w-7xl mx-auto lg:ml-30 ml-0 mt-10 md:mt-25 px-4 sm:px-8 relative app-bg app-text">      {/* Mobile breadcrumb */}
       {mobileBreadcrumb && (
         <div className="md:hidden">{mobileBreadcrumb}</div>
       )}
@@ -20,17 +19,16 @@ const MarketplaceLayout: React.FC<MarketplaceLayoutProps> = ({
         {topBar}
       </div>
 
-      {/* Desktop: sidebar + content */}
-      <div className="hidden md:flex gap-10 mt-10">
+      {/* Desktop & Tablet: sidebar + content */}
+      <div className="hidden md:flex gap-6 lg:gap-10 mt-10">
         {/* Sidebar column */}
-        <aside className="shrink-0">{sidebar}</aside>
-
+        <aside className="shrink-0 w-48 lg:w-61">{sidebar}</aside>
         {/* Main content column */}
         <main className="flex-1 ml-3 mb-15">{content}</main>
       </div>
 
       {/* Mobile: single column */}
-      <div className="md:hidden">
+      <div className="md:hidden px-4 sm:px-8">
         {mobileContent}
       </div>
     </section>

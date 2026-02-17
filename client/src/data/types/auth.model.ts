@@ -1,27 +1,50 @@
+import type { ChangeEvent, FormEvent } from "react";
+
+export interface RegisterForm {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
 export interface RegisterPageProps {
-  form: {
+  form: RegisterForm;
+  error: string;
+  success: string;
+  loading: boolean;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: FormEvent) => Promise<void>;
+}
+
+export interface RegisterResponse {
+  message: string;
+  user?: {
+    id: string;
     name: string;
     email: string;
-    password: string;
-    confirmPassword: string;
   };
-  error: string;
-  user: any;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleSubmit: (e: React.FormEvent) => void;
 }
 
+export interface LoginForm {
+  email: string;
+  password: string;
+}
 
 export interface LoginPageProps {
-  form: { email: string; password: string };
+  form: LoginForm;
   error: string;
-  user: any;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleSubmit: (e: React.FormEvent) => void;
+  loading: boolean;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: FormEvent) => Promise<void>;
 }
 
-export type RegisterResponse = {
-  success: boolean;
+
+export interface LoginResponse {
   message?: string;
-  user?: { name: string; email: string };
-};
+  user?: {
+    id: string;
+    name: string;
+    email: string;
+  };
+  token?: string;
+}

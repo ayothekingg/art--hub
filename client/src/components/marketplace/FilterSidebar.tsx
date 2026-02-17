@@ -22,15 +22,15 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
   onPriceChange,
 }) => {
   return (
-    <div className="w-61 shrink-0">
+    <div className="w-48 md:w-56 lg:w-61 shrink-0 px-2 md:px-4 lg:px-0">
       <div className="flex items-center gap-4 mb-3">
-        <FaSliders className="w-9 h-10 text-[#616161] app-text" />
-        <span className="text-[32px] text-[#333333] satoshi-medium app-text">
+        <FaSliders className="w-8 h-8 md:w-9 md:h-10 text-[#616161] app-text" />
+        <span className="text-xl md:text-2xl lg:text-3xl text-[#333333] satoshi-medium app-text">
           Filter
         </span>
       </div>
-      <div className="mb-10 w-61 h-1.5 rounded-lg bg-[#AFB091]" />
-      <div className="mb-6 flex flex-col gap-8">
+      <div className="mb-10 w-full h-1.5 rounded-lg bg-[#AFB091]" />
+      <div className="mb-6 flex flex-col gap-6 md:gap-8">
         <FilterSection
           title="By Category"
           open={openSections.category}
@@ -50,9 +50,9 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
           title="By Price"
           open={openSections.price}
           onToggle={() => toggleSection("price")}
-          chevronMargin="ml-8 md:ml-28"
+          chevronMargin="ml-8 md:ml-20 lg:ml-28"
         >
-          <span className="text-[18px] md:text-[24px] text-[#292929] satoshi app-text">
+          <span className="text-base md:text-lg lg:text-xl text-[#292929] satoshi app-text">
             ${minPrice.toFixed(2)} - ${priceValue.toFixed(2)}
           </span>
           <input
@@ -61,7 +61,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
             max={maxPrice}
             value={priceValue}
             onChange={(e) => onPriceChange(Number(e.target.value))}
-            className="price-slider w-full md:w-59.25 h-1.5 border-none accent-[#333333] outline-none custom-slider"
+            className="price-slider w-full md:w-48 lg:w-59.25 h-1.5 border-none accent-[#333333] outline-none custom-slider"
           />
         </FilterSection>
 
@@ -69,7 +69,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
           title="By Artist"
           open={openSections.artist}
           onToggle={() => toggleSection("artist")}
-          chevronMargin="ml-8 md:ml-28"
+          chevronMargin="ml-8 md:ml-20 lg:ml-28"
         >
           {artistOptions.map((artist) => (
             <FilterOption
