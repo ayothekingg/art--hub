@@ -54,9 +54,10 @@ export interface ArrowButtonProps {
   onClick: () => void;
   className?: string;
   ariaLabel?: string;
+  disabled?: boolean;
 }
 
-interface BreadcrumbItem {
+export interface BreadcrumbItem {
   label: string;
   path?: string; 
 }
