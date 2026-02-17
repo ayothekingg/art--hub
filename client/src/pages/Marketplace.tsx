@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import useDarkMode from "../hooks/useDarkMode";
-import Navbar from "../components/Navbar";
-import Features from "../marketplace/features";
+import useDarkMode from "@/hooks/useDarkMode";
+import Navbar from "@/components/Navbar";
+import Features from "@/marketplace/features";
 
 import Footer from "../components/Footer";
 

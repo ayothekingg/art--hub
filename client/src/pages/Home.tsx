@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import useDarkMode from "../hooks/useDarkMode";
-import Navbar from "../components/Navbar";
-import Hero from "../home/hero";
-import Featured from "../home/featured";
-import Auctions from "../home/auctions";
-import OthersSection from "../home/others";
-import Creators from "../home/creators";
-import Footer from "../components/Footer";
+import useDarkMode from "@/hooks/useDarkMode";
+import Navbar from "@/components/Navbar";
+import Hero from "@/home/hero";
+import Featured from "@/home/featured";
+import Auctions from "@/home/auctions";
+import OthersSection from "@/home/others";
+import Creators from "@/home/creators";
+import Footer from "@/components/Footer";
 
 const Home: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);

@@ -1,15 +1,13 @@
-import { useState, useRef } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 import { marketplaceProducts } from "../data";
-import Navbar from "../components/Navbar";
-import useDarkMode from "../hooks/useDarkMode";
-import { GrDiamond } from "react-icons/gr";
-import { FiMinus, FiPlus } from "react-icons/fi";
-import { PiHeartStraightThin } from "react-icons/pi";
-import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
-import CollectionProductCard from "../components/CollectionProductCard";
-import CollapsibleSection from "../components/CollapsibleSection";
-import { useCartStore } from "../store/cartStore";
+import Navbar from "@/components/Navbar";
+import useDarkMode from "@/hooks/useDarkMode";
+import { useCartStore } from "@/store/cartStore";
+import Breadcrumb from "@/components/shared/Breadcrumb";
+import MobileProductView from "@/components/products/MobileProductView";
+import DesktopProductView from "@/components/products/DesktopProductView";
+import CollectionCarousel from "@//components/products/CollectionCarousel";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -17,33 +15,28 @@ const ProductPage = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useDarkMode();
   const [quantity, setQuantity] = useState(1);
-  const [mobileCardIndex, setMobileCardIndex] = useState(0);
 
   const { addToCart } = useCartStore();
 
-  const handlePrevCard = () => {
-    setMobileCardIndex((prev) =>
-      prev === 0 ? marketplaceProducts.length - 1 : prev - 1
-    );
-  };
-  const handleNextCard = () => {
-    setMobileCardIndex((prev) =>
-      prev === marketplaceProducts.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -400 : 400,
-        behavior: "smooth",
-      });
-    }
+  const handleAddToCart = () => {
+    if (!product) return;
+    
+    addToCart({
+      id: product.id,
+      image: product.image,
+      title: product.title,
+      subtitle: product.creator,
+      price: product.price,
+      quantity: quantity,
+    });
   };
 
-  if (!product) return <div>Product not found</div>;
+  const incrementQuantity = () => setQuantity((q) => q + 1);
+  const decrementQuantity = () => setQuantity((q) => Math.max(1, q - 1));
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
 
   return (
     <>
@@ -55,290 +48,34 @@ const ProductPage = () => {
       />
 
       <section className="min-h-screen flex flex-col app-bg">
-        <div className="block text-[18px] ml-2.5 mt-8 mb-5 satoshi-medium md:mt-15 md:text-[24px] md:mb-15 md:ml-30">
-          <Link to="/" className="text-[#999] hover:underline">
-            Home
-          </Link>
-          <span className="text-[#999]">/</span>
-          <Link to="/Marketplace" className="text-[#999] hover:underline">
-            Marketplace
-          </Link>
-          <span className="text-[#999]">/</span>
-          <span className="app-text">{product.title}</span>
-        </div>
+        <Breadcrumb
+          items={[
+            { label: "Home", path: "/" },
+            { label: "Marketplace", path: "/Marketplace" },
+            { label: product.title },
+          ]}
+        />
 
-        <div className="md:hidden">
-          <div className="block w-99.5 h-px bg-[#333333] dark:bg-[#666666] ml-2 mb-6" />
-          <div className=" flex justify-center mb-4">
-            <img
-              src={product.image}
-              alt={product.title}
-              className="w-89.25 h-96 object-cover"
-            />
-          </div>
-          <div className="flex justify-between items-center w-89.25 mx-auto mb-6">
-            <h1 className="text-[16px] uppercase satoshi-bold app-text">
-              {product.title}
-            </h1>
-            <div className="flex items-center text-[16px] app-text">
-              ${product.price}
-            </div>
-          </div>
+        {/* Mobile View */}
+        <MobileProductView
+          product={product}
+          quantity={quantity}
+          onIncrement={incrementQuantity}
+          onDecrement={decrementQuantity}
+          onAddToCart={handleAddToCart}
+        />
 
-          <div className="flex flex-col gap-4 w-89.25 mx-auto mb-6">
-            <p className="text-[18px] satoshi-normal app-text">
-              <span className="">Creator: </span>
-              <span className="text-[#4693ED]">{product.creator}</span>
-            </p>
-            <p className="text-[16px] satoshi-normal app-text">
-              <span className="">Made in </span>
-              {product.location}
-            </p>
-            <p className="text-[16px] satoshi-normal app-text">
-              <span className="">Total Views: </span>
-              {product.views}
-              <span className=""> Views</span>
-            </p>
-            <div className="flex items-center gap-6 mt-2">
-              <span
-                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                aria-label="Decrease quantity"
-                className="cursor-pointer"
-              >
-                <FiMinus size={24} />
-              </span>
-              <span className="text-[24px] satoshi-bold app-text">
-                {quantity}
-              </span>
-              <span
-                onClick={() => setQuantity((q) => q + 1)}
-                aria-label="Increase quantity"
-                className="cursor-pointer"
-              >
-                <FiPlus size={24} />
-              </span>
-            </div>
-          </div>
+        {/* Desktop View */}
+        <DesktopProductView
+          product={product}
+          quantity={quantity}
+          onIncrement={incrementQuantity}
+          onDecrement={decrementQuantity}
+          onAddToCart={handleAddToCart}
+        />
 
-          <div className="flex flex-row items-center gap-4 mt-4 ml-8 mb-10 ">
-            <button
-              className="w-53.5 h-13.5 bg-[#272727] text-white text-[20px] satoshi-bold "
-              onClick={() => {
-                addToCart({
-                  id: product.id,
-                  image: product.image,
-                  title: product.title,
-                  subtitle: product.creator,
-                  // size: product.size,
-                  price: product.price,
-                  quantity: quantity,
-                });
-              }}
-            >
-              Add to Cart
-            </button>
-            <div className="w-13.5 h-13.5 flex items-center justify-center border sort-border cursor-pointer">
-              <PiHeartStraightThin className="tborder sort-border" size={32} />
-            </div>
-          </div>
-
-          <div className="block w-99.5 h-px bg-[#333333] dark:bg-[#666666] ml-2 mb-6" />
-
-          <CollapsibleSection title="Description">
-            {product.description}
-          </CollapsibleSection>
-
-          <div className="block w-99.5 h-px bg-[#333333] dark:bg-[#666666] ml-2 mb-6" />
-
-          <CollapsibleSection title="Listing">
-            {product.listing}
-          </CollapsibleSection>
-
-          <div className="block w-99.5 h-px bg-[#333333] dark:bg-[#666666] ml-2 mb-6" />
-
-          <CollapsibleSection title="Status">
-            {product.status}
-          </CollapsibleSection>
-
-          <div className="block w-99.5 h-px bg-[#333333] dark:bg-[#666666] ml-2 mb-6" />
-
-          <span className="text-[22px] satoshi-bold ml-5 mb-10 app-text">
-            More from this collection
-          </span>
-
-          <div className="relative flex justify-center items-center mt-10 mb-25">
-            <button
-              onClick={handlePrevCard}
-              className="absolute left-10 -mt-5 top-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center rounded-full bg-transparent border-[white] border z-10"
-              aria-label="Previous card"
-            >
-              <HiChevronLeft size={32} className="text-[white]" />
-            </button>
-            <Link
-              to={`/Marketplace/product/${marketplaceProducts[mobileCardIndex].id}`}
-            >
-              <div className="min-w-99.5 max-w-99.5">
-                <CollectionProductCard
-                  image={marketplaceProducts[mobileCardIndex].image}
-                  title={marketplaceProducts[mobileCardIndex].title}
-                  price={marketplaceProducts[mobileCardIndex].price}
-                />
-              </div>
-            </Link>
-
-            <button
-              onClick={handleNextCard}
-              className="absolute right-10 -mt-5 top-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center rounded-full bg-transparent border-[white] border z-10"
-              aria-label="Next card"
-            >
-              <HiChevronRight size={32} className="text-[white]" />
-            </button>
-          </div>
-        </div>
-
-        <div className="ml-30 w-305 h-255 bg-transparent border-2 mb-15 sort-border hidden md:flex items-stretch justify-center">
-          <div className="flex-1 flex flex-col items-center justify-center h-255">
-            <img
-              src={product.image}
-              alt={product.title}
-              className="w-131.25 h-231.5 object-cover -ml-17"
-            />
-          </div>
-
-          <div className="w-px border sort-border  -ml-17 h-254.5" />
-
-          <div className="flex-1 flex flex-col justify-between h-255 py-12">
-            <div className="flex justify-between items-center -mt-5 mb-10 h-30 px-10">
-              <h1 className="text-[46px] satoshi-bold app-text">
-                {product.title}
-              </h1>
-              <div className="flex items-center text-[40px] mb-2 app-text">
-                <GrDiamond className="mr-2" />
-                {product.price}
-              </div>
-            </div>
-
-            <div className="w-full h-px -mt-20 border sort-border " />
-
-            <div className="flex flex-col items-start px-10">
-              <p className="text-[30px] satoshi-normal app-text">
-                <span className="">Creator : </span>
-                <span className="text-[#4693ED]">{product.creator}</span>
-              </p>
-              <p className="text-[24px] satoshi-normal app-text mt-5">
-                <span className="">Made in </span> {product.location}
-              </p>
-              <p className="text-[28px] satoshi-medium app-text mt-5">
-                <span className="">Total Views: </span> {product.views}
-                <span className=""> Views</span>
-              </p>
-
-              <div className="flex flex-col items-start ">
-                <div className="flex items-center gap-6 mt-6 mb-15">
-                  <span
-                    onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                    aria-label="Decrease quantity"
-                  >
-                    <FiMinus size={30} />
-                  </span>
-                  <span className="text-[36px] satoshi-bold app-text">
-                    {quantity}
-                  </span>
-                  <span
-                    onClick={() => setQuantity((q) => q + 1)}
-                    aria-label="Increase quantity"
-                  >
-                    <FiPlus size={30} />
-                  </span>
-                </div>
-
-                <div className="flex flex-row items-center gap-6 ">
-                  <button
-                    className="w-78.75 h-20 bg-[#272727] text-white text-[26px] satoshi-bold"
-                    onClick={() => {
-                      addToCart({
-                        id: product.id,
-                        image: product.image,
-                        title: product.title,
-                        subtitle: product.creator,
-                        // size: product.size,
-                        price: product.price,
-                        quantity: quantity,
-                      });
-                    }}
-                  >
-                    Add to Cart
-                  </button>
-                  <div className="w-25 h-20 flex items-center justify-center border sort-border  cursor-pointer ">
-                    <PiHeartStraightThin
-                      className="tborder sort-border"
-                      size={60}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-full h-px  border sort-border " />
-
-            <CollapsibleSection title="Description">
-              {product.description}
-            </CollapsibleSection>
-
-            <div className="w-full h-px border sort-border " />
-
-            <CollapsibleSection title="Listing">
-              {product.listing}
-            </CollapsibleSection>
-
-            <div className="w-full h-px border sort-border " />
-
-            <CollapsibleSection title="Status">
-              {product.status}
-            </CollapsibleSection>
-          </div>
-        </div>
-
-        <div className="ml-30 w-305 h-28.5 mt-15 mb-15 bg-white dark:bg-[#181818] rounded-[15px] hidden md:flex items-center justify-between px-10 shadow card-shadow app-bg app-text">
-          <span className="text-[32px] text-[#333333] satoshi-medium app-text">
-            Explore more from this collection
-          </span>
-          <div className="flex gap-6">
-            <button
-              onClick={() => scroll("left")}
-              className="w-11 h-11 md:w-14.5 md:h-14.5 flex items-center justify-center rounded-full app-bg border-main border-[0.41px] "
-            >
-              <HiChevronLeft size={32} />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              className="w-11 h-11 md:w-14.5 md:h-14.5 flex items-center justify-center rounded-full app-bg border-main border-[0.41px] "
-            >
-              <HiChevronRight size={32} />
-            </button>
-          </div>
-        </div>
-
-        <div
-          ref={scrollRef}
-          className=" overflow-x-auto no-scrollbar ml-30 mr-30 mb-15 gap-8 hidden md:flex"
-        >
-          {marketplaceProducts.map((item) => (
-            <Link key={item.id} to={`/Marketplace/product/${item.id}`}>
-              <CollectionProductCard
-                image={item.image}
-                title={item.title}
-                price={item.price}
-              />
-            </Link>
-          ))}
-        </div>
-
-        <div className=" justify-center mt-10 mb-30 hidden md:flex">
-          <button className="px-8 py-3 w-62.25 h-18.25 app-bg app-text border sort-border rounded-lg text-[30px] satoshi-medium ">
-            Explore More
-          </button>
-        </div>
+        {/* Collection Carousel - Desktop Only */}
+        <CollectionCarousel products={marketplaceProducts} />
       </section>
     </>
   );

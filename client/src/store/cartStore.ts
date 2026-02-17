@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { CartState } from "../data/types/marketplace.model";
+import type { CartState } from "@/data/types/marketplace.model";
 
 export const useCartStore = create<CartState>((set) => ({
   cart: [],

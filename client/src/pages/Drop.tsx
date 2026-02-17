@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import useDarkMode from "../hooks/useDarkMode";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import MainDrop from "../drop/maindrop";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import MainDrop from "@/drop/maindrop";
 
 const Drop: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);

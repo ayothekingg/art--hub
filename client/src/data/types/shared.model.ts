@@ -1,5 +1,6 @@
 
 export type Theme = "light" | "dark";
+
 export interface NavbarProps {
   menuOpen: boolean;
   setMenuOpen: (open: boolean) => void;
@@ -36,3 +37,43 @@ export type ProductT = {
 };
 
 export type CreatorT = string;
+
+
+export interface UseMenuAnimationProps {
+  menuOpen: boolean;
+}
+
+export interface UseMenuAnimationReturn {
+  shouldRender: boolean;
+  isOpening: boolean;
+  isClosing: boolean;
+}
+
+export interface ArrowButtonProps {
+  direction: "left" | "right";
+  onClick: () => void;
+  className?: string;
+  ariaLabel?: string;
+}
+
+interface BreadcrumbItem {
+  label: string;
+  path?: string; 
+}
+
+export interface BreadcrumbProps {
+  items: BreadcrumbItem[];
+  className?: string;
+}
+
+export interface LoadMoreButtonProps {
+  onClick?: () => void;
+  label?: string;
+  className?: string;
+}
+
+export interface SeeMoreButtonProps {
+  onClick: () => void;
+  disabled?: boolean;
+  className?: string;
+}

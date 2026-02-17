@@ -1,9 +1,9 @@
 import { useState } from "react";
-import ArrowButton from "../components/ArrowButton";
+import ArrowButton from "@/components/shared/ArrowButton";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useSwipeable } from "react-swipeable";
-import { auctionCards } from "../data";
-import AuctionCard from "../components/AuctionCard";
+import { auctionCards } from "@/data";
+import AuctionCard from "@/components/home/AuctionCard";
 
 const Auctions = () => {
   const [current, setCurrent] = useState(0);
@@ -20,15 +20,13 @@ const Auctions = () => {
     trackMouse: true,
   });
 
+  const progressPercentage = ((current + 1) / auctionCards.length) * 100;
+
   return (
     <section
-      className="h-84 md:h-auto"
+      className="h-84 md:h-auto p-8"
       style={{
-        width: "100%",
-        background:
-          "linear-gradient(100deg, #4693ED -26.21%, #79C2D2 12.16%, rgba(192, 86, 9, 0.60) 111.62%)",
-        padding: "2rem",
-        boxSizing: "border-box",
+        background: "linear-gradient(100deg, #4693ED -26.21%, #79C2D2 12.16%, rgba(192, 86, 9, 0.60) 111.62%)",
       }}
     >
       <div className="hidden md:block">
@@ -46,27 +44,13 @@ const Auctions = () => {
       </div>
 
       <div className="hidden md:flex items-center justify-between w-305 ml-22.5 mt-6">
-        <div
-          style={{
-            width: "295.6947px",
-            height: "10px",
-            borderRadius: "50px",
-            background: "#AEAEAE",
-            opacity: 1,
-            overflow: "hidden",
-          }}
-        >
+        <div className="w-full max-w-sm h-2.5 rounded-full bg-[#AEAEAE] overflow-hidden">
           <div
-            style={{
-              width: `${((current + 1) / auctionCards.length) * 100}%`,
-              height: "100%",
-              background: "white",
-              borderRadius: "50px",
-              transition: "width 0.3s",
-            }}
+            className="h-full bg-white rounded-full transition-all duration-300"
+            style={{ width: `${progressPercentage}%` }}
           />
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 ml-8">
           <ArrowButton direction="left" onClick={handlePrev} />
           <ArrowButton direction="right" onClick={handleNext} />
         </div>

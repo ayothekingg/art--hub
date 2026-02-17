@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import useDarkMode from "../hooks/useDarkMode";
-import ShoppingCart from "../components/ShoppingCart";
-import ShippingDetails from "../components/ShippingDetails";
-import PaymentDetails from "../components/PaymentDetails";
+import Navbar from "@/components/Navbar";
+import useDarkMode from "@/hooks/useDarkMode";
+import ShoppingCart from "@/components/cart/ShoppingCart";
+import ShippingDetails from "@/components/cart/ShippingDetails";
+import PaymentDetails from "@/components/cart/PaymentDetails";
 
 const tabs = [
   { label: "Shopping Cart" },

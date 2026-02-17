@@ -1,30 +1,4 @@
-export interface CardFormFieldsProps {
-  checked: boolean;
-  setChecked: (v: boolean) => void;
-}
 
-export interface CartProductProps {
-  image: string;
-  title: string;
-  subtitle: string;
-  price: string | number;
-  quantity: number;
-  onIncrease?: () => void;
-  onDecrease?: () => void;
-  onRemove?: () => void;
-}
-
-import type { ReactNode } from "react";
-export interface CollapsibleSectionProps {
-  title: string;
-  children: ReactNode;
-}
-
-export interface CollectionProductCardProps {
-  image: string;
-  title: string;
-  price: number;
-}
 
 export interface FilterOptionProps {
   checked: boolean;
@@ -46,42 +20,6 @@ export interface ProductCardProps {
   price: number;
 }
 
-export interface ProductSummaryProps {
-  image: string;
-  title: string;
-  subtitle: string;
-  price: string | number;
-  quantity: number;
-  onIncrease?: () => void;
-  onDecrease?: () => void;
-  onRemove?: () => void;
-}
-
-export interface ShippingDetailsProps {
-  onProceed?: () => void;
-}
-
-export interface ShippingFormProps {
-  onProceed?: (formData: any) => void;
-}
-
-export interface ShoppingCartProps {
-  onProceed?: () => void;
-}
-
-export interface WalletFormFieldsProps {
-  selectedNetwork: any | null;
-  setSelectedNetwork: (v: any) => void;
-  selectedToken: any | null;
-  setSelectedToken: (v: any) => void;
-  checked: boolean;
-  setChecked: (v: boolean) => void;
-  networkButtonRef: React.RefObject<HTMLButtonElement>;
-  tokenButtonRef: React.RefObject<HTMLButtonElement>;
-  networks: any[];
-  tokens: any[];
-}
-
  export interface CartProductType {
   id: string;
   image: string;
@@ -100,8 +38,6 @@ export interface CartState {
   clearCart: () => void;
 }
 
-import { sortOptions } from "../../data";
-export type SortOption = typeof sortOptions[0];
 export type Filters = {
   search: string;
   categories: string[];
@@ -110,3 +46,89 @@ export type Filters = {
   price: number;
   sort: SortOption;
 };
+
+
+export interface SortOption {
+  value: string;
+  label: string;
+}
+
+export interface SortDropdownProps {
+  value: SortOption;
+  options: SortOption[];
+  onChange: (option: SortOption) => void;
+}
+
+
+
+export type FilterSection = "category" | "price" | "artist" | "year";
+
+export interface FilterSidebarProps {
+  openSections: {
+    category: boolean;
+    price: boolean;
+    artist: boolean;
+    year: boolean;
+  };
+  toggleSection: (section: FilterSection) => void;
+  categoryOptions: string[];
+  artistOptions: string[];
+  yearOptions: string[];
+  selectedCategories: string[];
+  selectedArtists: string[];
+  selectedYears: string[];
+  priceValue: number;
+  minPrice: number;
+  maxPrice: number;
+  onCategoryToggle: (category: string) => void;
+  onArtistToggle: (artist: string) => void;
+  onYearToggle: (year: string) => void;
+  onPriceChange: (price: number) => void;
+}
+
+
+export interface MarketplaceLayoutProps {
+  topBar: React.ReactNode;
+  sidebar: React.ReactNode;
+  content: React.ReactNode;
+  mobileContent: React.ReactNode;
+  mobileBreadcrumb?: React.ReactNode;
+}
+
+export interface MobileBreadcrumbProps {
+  selectedCategory: string;
+}
+
+export interface MobileFilterDropdownProps {
+  showFilter: boolean;
+  onToggle: () => void;
+  categories: string[];
+  selectedCategory: string;
+  onSelectCategory: (category: string) => void;
+}
+
+interface Product {
+  id: string | number;
+  image: string;
+  title: string;
+  price: number;
+}
+
+export interface ProductGridProps {
+  products: Product[];
+  hasMore: boolean;
+  onLoadMore: () => void;
+    isMobile?: boolean; 
+  onViewportChange?: () => void; 
+}
+
+export interface ResultsDisplayProps {
+  visibleCount: number;
+  totalCount: number;
+  isMobile?: boolean;
+}
+
+export interface SearchBarProps {
+  value: string;
+  onChange: (value: string) => void;
+}

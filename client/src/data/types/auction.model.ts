@@ -1,9 +1,3 @@
- export interface ArrowButtonProps {
-  direction: "left" | "right";
-  onClick: () => void;
-  className?: string;
-  ariaLabel?: string;
-}
 
 export type AuctionCardT = {
   image: string;
@@ -20,16 +14,7 @@ export interface BidButtonProps {
   onClick?: () => void;
 }
 
-export interface BidInputBoxProps {
-  placeholder?: string;
-  onSend?: (value: string) => void;
-}
 
-export interface ChatMessageProps {
-  profileImg: string;
-  name: string;
-  message: string;
-}
 
 export interface CreatorCardProps {
   image: string;
@@ -37,18 +22,14 @@ export interface CreatorCardProps {
   highestBid?: number | string;
 }
 
-export interface FlyingHeartProps {
-  offset: number;
-  color: string;
-  size: number;
-  rotate: number;
+export interface AuctionCarouselProps {
+  auctions: any[];
 }
 
-export interface FlyingHeartButtonProps {
-  className?: string;
-  heartCount?: number;
+export interface CreatorBidSectionProps {
+  creators: any[];
 }
 
-export interface MainAuctionCardProps {
+export type MainAuctionCardProps = {
   image: string;
-}
+};
